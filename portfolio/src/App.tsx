@@ -38,6 +38,9 @@ function App() {
           backgroundImage: `url(${sky})`,
           backgroundSize: "100%",
           height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          minHeight: "100vh",
         }}
       >
         <ParallaxLayer>
@@ -57,13 +60,6 @@ function App() {
           </Box>
         </ParallaxLayer>
 
-        {/* <ParallaxLayer
-          sticky={{ start: 0.2, end: 2.5}}
-          style={{ textAlign: 'center', width: '50%'}}
-        >
-          <img src={castle}/>
-        </ParallaxLayer> */}
-
         <ParallaxLayer
         className="chapter"
         speed={0.5}
@@ -80,26 +76,39 @@ function App() {
         </ParallaxLayer>
 
         <ParallaxLayer
+          speed={0.5}
+          style={{
+            top: "200px",
+          }}
+        >
+          <img id="castle" src={castle}/>
+        </ParallaxLayer> 
+
+        <ParallaxLayer
           className="chapter"
           speed={1.5}
           style={{
             backgroundImage: `url(${mountains})`,
             backgroundSize: "100%",
             height: "100%",
-            top: '700px'
+            top: '40em'
           }}
         ></ParallaxLayer>
 
         <ParallaxLayer
           className="chapter"
-          speed={2}
+          speed={2.5}
           style={{
             backgroundImage: `url(${land})`,
             backgroundSize: "100%",
             height: "100%",
-            top: '100px'
+            position: 'absolute',
+            marginTop: 'auto',
+            bottom: '0',
           }}
-        ></ParallaxLayer>
+        >
+          <div id="shadow" />
+        </ParallaxLayer>
 
 
         {/* <ParallaxLayer className="chapter" offset={3.5} speed={0.5} factor={2}>

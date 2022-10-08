@@ -18,6 +18,49 @@ div {
   width: auto;
 } */
 
+@keyframes xAxis {
+  50% {
+    animation-timing-function: ease-in-out;
+    transform: translateY(2em);
+  }
+}
+
+@keyframes yAxis {
+  50% {
+    animation-timing-function: ease-in-out;
+    transform: translateY(20em);
+  }
+}
+
+/* #shadow {
+  position: relative;
+  margin-top: 50em;
+  padding-top: 2em;
+  width: 300px;
+  height: 100px;
+  margin-left: 250px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.651);
+  filter: blur(3rem);
+  animation: yAxis 4s infinite ease-in-out;
+}
+
+#shadow::after {
+  animation: xAxis 4s infinite ease-in-out;
+} */
+
+
+#castle {
+  display: block;
+  width: 23em;
+  margin-left: 10em;
+  animation: xAxis 4s infinite ease-in-out;
+}
+
+#castle::after {
+  animation: yAxis 4s infinite ease-in-out;
+}
+
 h1, h4 {
   color: #fff;
 }
