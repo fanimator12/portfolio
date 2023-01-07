@@ -17,3 +17,75 @@ code {
   src: local("Nasalization"),
     url(./fonts/Nasalization/nasalization-rg.otf) format("truetype");
 }
+
+@font-face {
+  font-family: "Ghibli";
+  src: local("Ghibli"),
+    url(./fonts/Ghibli/Ghibli.otf) format("truetype");
+}
+
+@font-face {
+  font-family: "Ghibli Bold";
+  src: local("Ghibli-Bold"),
+    url(./fonts/Ghibli/Ghibli-Bold.otf) format("truetype");
+}
+
+@font-face {
+  font-family: "ChakraPetch Bold";
+  src: local("ChakraPetch-Bold"),
+    url(./fonts/Chakra/ChakraPetch-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "ChakraPetch Bold Italic";
+  src: local("ChakraPetch-BoldItalic"),
+    url(./fonts/Chakra/ChakraPetch-BoldItalic.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "ChakraPetch SemiBold";
+  src: local("ChakraPetch-SemiBold"),
+    url(./fonts/Chakra/ChakraPetch-SemiBold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "ChakraPetch SemiBold Italic";
+  src: local("ChakraPetch-SemiBoldItalic"),
+    url(./fonts/Chakra/ChakraPetch-SemiBoldItalic.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "ChakraPetch Italic";
+  src: local("ChakraPetch-Italic"),
+    url(./fonts/Chakra/ChakraPetch-Italic.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "ChakraPetch Light";
+  src: local("ChakraPetch-Light"),
+    url(./fonts/Chakra/ChakraPetch-Light.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "ChakraPetch Light Italic";
+  src: local("ChakraPetch-LightItalic"),
+    url(./fonts/Chakra/ChakraPetch-LightItalic.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "ChakraPetch Medium";
+  src: local("ChakraPetch-Medium"),
+    url(./fonts/Chakra/ChakraPetch-Medium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "ChakraPetch Medium Italic";
+  src: local("ChakraPetch-MediumItalic"),
+    url(./fonts/Chakra/ChakraPetch-MediumItalic.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "ChakraPetch Regular";
+  src: local("ChakraPetch-Regular"),
+    url(./fonts/Chakra/ChakraPetch-Regular.ttf) format("truetype");
+}

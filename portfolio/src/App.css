@@ -1,22 +1,36 @@
+*, html, body{
+  cursor: url(./photos/cursor.png),  auto;
+} 
 
-* {
-  margin: 0;
+html,
+body {
   padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background: #000;
 }
 
-div {
-  overflow: hidden;
+html {
+  scroll-behavior: smooth;
 }
 
-/* .chapter {
-  display: block;
-  justify-content: center;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto; 
-  color: #fff;
-  width: auto;
-} */
+body {
+  /* To hide the scrollbar */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.parallax::-webkit-scrollbar {
+  display: none;
+}
 
 @keyframes xAxis {
   50% {
@@ -32,28 +46,30 @@ div {
   }
 }
 
-/* #shadow {
+#shadow {
   position: relative;
   margin-top: 50em;
   padding-top: 2em;
   width: 300px;
   height: 100px;
+  left: -60px;
   margin-left: 250px;
   border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.651);
+  background-color: rgba(0, 0, 0, 0.233);
   filter: blur(3rem);
-  animation: yAxis 4s infinite ease-in-out;
+  animation: xAxis 4s infinite ease-in-out;
 }
 
 #shadow::after {
-  animation: xAxis 4s infinite ease-in-out;
-} */
+  animation: yAxis 4s infinite ease-in-out;
+}
 
 
 #castle {
+  cursor: move;
   display: block;
   width: 23em;
-  margin-left: 10em;
+  margin-left: 12em;
   animation: xAxis 4s infinite ease-in-out;
 }
 
@@ -61,18 +77,26 @@ div {
   animation: yAxis 4s infinite ease-in-out;
 }
 
-h1, h4 {
+h1 {
   color: #fff;
+  text-transform: lowercase;
+  font: normal normal normal 50px/1px Ghibli;
 }
 
-h1 {
-  font: normal normal normal 25px/30px Nasalization;
+h2,
+h3,
+h4 {
+  color: #fff;
+  text-transform: lowercase;
+  font: normal normal normal 20px/10px Ghibli;
 }
+
 
 @keyframes move-twinkle-back {
   from {
     background-position: 0 0;
   }
+
   to {
     background-position: -0000px 5000px;
   }
@@ -111,6 +135,8 @@ h1 {
   align-items: start;
   text-align: start;
   padding: 50px;
+  color: #fff;
+  z-index: 10000;
 }
 
 .title {
@@ -120,5 +146,59 @@ h1 {
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  top: 300px;
+  flex-direction: column;
+}
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: #fff;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.5s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.reveal,
+.reveal.active {
+  transition: all 1s ease;
+}
+
+.reveal {
+  transform: translateY(100px);
+  opacity: 0;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.copyright-box {
+  background: #000;
+  width: 100%;
+  padding: 8px;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  color: #fff;
 }
