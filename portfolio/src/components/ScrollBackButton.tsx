@@ -1,9 +1,8 @@
 import { ParallaxLayer } from "@react-spring/parallax";
 import { Button } from "@mui/material";
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
-import ScrollToTop from "../components/ScrollToTop";
 
-function Mountains() {
+function ScrollBackButton() {
     return (
         <ParallaxLayer
             offset={8}
@@ -17,4 +16,4 @@ function Mountains() {
         </ParallaxLayer>
     );
 }
-export default Mountains;
+export default ScrollBackButton;

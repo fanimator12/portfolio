@@ -3,5 +3,6 @@ export interface Project {
     image: string,
     title: string,
     url: string,
-    type: "software" | "photo" | "graphic"
+    type: "software" | "photo" | "graphic",
+    description: string | null
 }

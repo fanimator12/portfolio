@@ -12,7 +12,6 @@ function Projects() {
       sx={{
         display: { xs: "block" },
         borderRadius: "30px",
-        backgroundColor: "#000",
         paddingTop: "8em", 
         height: "auto"
       }}

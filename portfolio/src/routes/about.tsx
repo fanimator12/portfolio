@@ -2,6 +2,7 @@ import { Button, Container, Grid, Typography } from "@mui/material";
 import Image from "mui-image";
 import { useEffect } from "react";
 import { getDetails } from "../components/about";
+import EducationStepper from "../components/EducationStepper";
 
 function About() {
 
@@ -92,16 +93,10 @@ function About() {
                   display="flex"
                   flexDirection="row"
                   alignItems="center"
-                  justifyContent="space-between"
+                  justifyContent="center"
                   sx={{
                     padding: "40px 5px 0",
                   }}>
-                  <Typography
-                    color="#7a7a7a"
-                    sx={{ fontSize: "20px", fontFamily: "ChakraPetch Light", paddingRight: "10px" }}
-                  >
-                    Email:
-                  </Typography>
                   <Typography
                     color="#fff"
                     className="hover-underline-animation"
@@ -119,105 +114,100 @@ function About() {
               ) : (
                 " "
               )}
-
-              {about.degree !== null ? (
-                <Grid
-                  display="flex"
-                  flexDirection="row"
-                  alignItems="center"
-                  justifyContent="space-between"
-                  sx={{
-                    padding: "5px",
-                  }}>
-                  <Typography
-                    color="#7a7a7a"
-                    sx={{ fontSize: "20px", fontFamily: "ChakraPetch Light", paddingRight: "10px" }}
-                  >
-                    Degree:
-                  </Typography>
-                  <Typography
-                    color="#fff"
-                    className="hover-underline-animation"
-                    sx={{
-                      fontSize: "20px",
-                      fontFamily: "ChakraPetch Regular",
-                      textAlign: "right"
-                    }}
-                  >
-                    <a style={{ color: "#fff", textDecoration: "none" }} href="https://en.via.dk/programmes/bachelor/software-technology-engineering" target="_blank">
-                      {about.degree}
-                    </a>
-                  </Typography>
-                </Grid>
-              ) : (
-                " "
-              )}
-
             </Container>
           </Container>
 
           <Container
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            width: "100%",
-            height: "auto",
-          }}
-        >
-          <Grid
-            display="flex"
-            flexDirection="row"
-            alignItems="center"
-            justifyContent="flex-start"
             sx={{
-              padding: "2rem 0 0 1rem",
-            }}>
-            <Typography
-              color="#fff"
-              sx={{
-                fontSize: "30px",
-                fontFamily: "ChakraPetch Regular",
-              }}
-            >
-              Skill set
-            </Typography>
-          </Grid>
-
-{/* TODO U can make it look like a keyboard */}
-          <Grid
-            sx={{ padding: "40px 5px 0" }}
-            display="grid"
-            gridTemplateColumns={{
-              xs: "repeat(3, 1fr)",
-              sm: "repeat(6, 1fr)",
-              md: "repeat(8, 1fr)",
-              lg: "repeat(9, 1fr)",
+              display: "flex",
+              flexDirection: "column",
+              width: "100%",
+              height: "auto",
             }}
-            gap={1}
           >
-            {about.skills !== undefined && about.skills !== null
-              ? about.skills.map((skill) => {
-                return (
-                  <Button
-                    sx={{
-                      border: "1px solid #7a7a7a",
-                      color: "#8a8a8a",
-                      textTransform: "capitalize",
-                      fontSize: "15px",
-                      fontFamily: "ChakraPetch Light",
-                      textAlign: "center",
-                      "&:hover": {
-                        backgroundColor: "transparent",
-                        color: "#fff",
-                        fontWeight: "800",
-                      },
-                    }}>
-                    {skill}
-                  </Button>
-                );
-              })
-              : ""}
-          </Grid>
+            <Grid
+              className="reveal"
+              display="flex"
+              flexDirection="row"
+              alignItems="center"
+              justifyContent="flex-start"
+              sx={{
+                padding: "2rem 0 0 1rem",
+              }}>
+              <Typography
+                color="#fff"
+                sx={{
+                  fontSize: "30px",
+                  fontFamily: "ChakraPetch Regular",
+                }}
+              >
+                Education
+              </Typography>
+            </Grid>
+
+            <Grid
+              sx={{ padding: "40px 5px 0" }}
+            >
+              <EducationStepper />
+            </Grid>
+
+            <Grid
+              display="flex"
+              flexDirection="row"
+              alignItems="center"
+              justifyContent="flex-start"
+              sx={{
+                padding: "2rem 0 0 1rem",
+              }}>
+              <Typography
+                color="#fff"
+                sx={{
+                  fontSize: "30px",
+                  fontFamily: "ChakraPetch Regular",
+                }}
+              >
+                Skill set
+              </Typography>
+            </Grid>
+
+            <Grid
+              sx={{ padding: "40px 5px 0" }}
+              display="grid"
+              gridTemplateColumns={{
+                xs: "repeat(2, 1fr)",
+                sm: "repeat(3, 1fr)",
+                md: "repeat(4, 1fr)",
+                lg: "repeat(6, 1fr)",
+              }}
+              gap={1}
+            >
+              {about.skills !== undefined && about.skills !== null
+                ? about.skills.map((skill) => {
+                  return (
+                    <Button
+                      sx={{
+                        border: "1px solid #7a7a7a",
+                        color: "#8a8a8a",
+                        textTransform: "none",
+                        fontSize: "15px",
+                        fontFamily: "ChakraPetch Bold",
+                        textAlign: "center",
+                        transition: "0.5s",
+                        "&:hover": {
+                          color: "#fff",
+                          borderRadius: "12px",
+                          transition: "0.5s",
+                        },
+                        "& .MuiTypography": {
+                          padding: "0 5px 0 5px",
+                        }
+                      }}>
+                      {skill}
+                    </Button>
+                  );
+                })
+                : ""}
+            </Grid>
           </Container>
         </Container>
       )}

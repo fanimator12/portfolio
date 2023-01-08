@@ -6,7 +6,7 @@ function FirstChapter() {
       speed={0.5}
       >
       <div className="title">
-        <h1>I'm going to show you around in my world</h1>
+        <h1>Let me show you around in my world</h1>
       </div>
 
     </ParallaxLayer>

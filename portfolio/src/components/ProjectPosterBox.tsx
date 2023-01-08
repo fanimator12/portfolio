@@ -9,7 +9,6 @@ const ProjectPosterBox = ({
     url
   }: ProjectBox) => {
 
-  
     return (
       <Box
         gridColumn="span 3"
