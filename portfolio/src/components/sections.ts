@@ -1,6 +1,6 @@
 const sections = [
   { title: 'about', url: 'about' },
-  { title: 'projects', url: 'projects' },
+  { title: 'portfolio', url: 'portfolio' },
   { title: 'services', url: 'services' },
 ];
 

@@ -29,9 +29,8 @@ function Photography() {
                     height: "auto",
                 }}
             >
-                <ImageList variant="masonry" gap={50} cols={2}>
+                <ImageList variant="masonry" gap={80} cols={2}>
                     {photos.map((photo) => {
-                        // const cols = photo.featured ? 3 : 1;
                         return (
                         <ImageListItem key={photo.img} cols={2}>
                             <img

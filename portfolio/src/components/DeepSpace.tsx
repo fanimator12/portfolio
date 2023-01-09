@@ -5,7 +5,7 @@ function DeepSpace() {
     <ParallaxLayer
       offset={0}
       speed={1}
-      factor={5}
+      factor={6}
       >
       <div className="stars" />
       <div className="twinkling" />

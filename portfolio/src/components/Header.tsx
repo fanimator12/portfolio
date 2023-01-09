@@ -14,8 +14,8 @@ function Header({ handleDrawerToggle, mobileOpen }: HeaderProps) {
       position="fixed"
         sx={{
           background:
-          'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
-          'rgba(0,0,0,0.2) 50%, rgba(0,0,0,0) 100%)',
+          'linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, ' +
+          'rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%)',
           boxShadow: 0,
           paddingTop: "0.5em",
         }}
