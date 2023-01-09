@@ -126,7 +126,6 @@ function About() {
             }}
           >
             <Grid
-              className="reveal"
               display="flex"
               flexDirection="row"
               alignItems="center"

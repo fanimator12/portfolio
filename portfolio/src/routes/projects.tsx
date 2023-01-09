@@ -1,139 +1,57 @@
-import { Container, Grid, Box, Typography, Divider, CardMedia } from "@mui/material";
+import { Container, Grid, Box, Typography, Divider, CardMedia, Button, List } from "@mui/material";
 import { useEffect } from "react";
+import { getCategories } from "../components/categories";
 
 function Projects() {
- 
+
+  const categories = getCategories();
+
   useEffect(() => {
     document.title = "projects | fanimator";
   });
 
-    return (
-      <Container
+  return (
+    <Container
       sx={{
         display: { xs: "block" },
-        borderRadius: "30px",
-        paddingTop: "8em", 
-        height: "auto"
+        paddingTop: "10em",
+        height: "auto",
+        paddingBottom: "5em"
       }}
     >
-      <Grid container>
-        <Box
-          sx={{
-            display: { xs: "flex" },
-            width: "100%",
-            height: "auto",
-          }}
-        >
-            <Typography
-                color="#fff"
-                sx={{
-                  padding: "20px 0 10px 0",
-                  fontSize: "40px",
-                  float: "right",
-                  fontFamily: "ChakraPetch SemiBold"
-                }}
-            >
-              software projects
-            </Typography>
-          <Divider />
-        </Box>
-      </Grid>
-
-      <Grid container sx={{ padding: "2em", marginTop: "5em" }}>
-          <Grid
-            item
-            display="grid"
-            gridTemplateColumns={{
-              xs: "repeat(3, 1fr)",
-              sm: "repeat(6, 1fr)",
-              md: "repeat(9, 1fr)",
-              lg: "repeat(12, 1fr)",
-            }}
-            gap={3}
-          >
-            <CardMedia />
-          </Grid>
-      </Grid>
-
-      <Grid container>
-        <Box
-          sx={{
-            display: { xs: "flex" },
-            width: "100%",
-            height: "auto",
-          }}
-        >
-            <Typography
-                color="#fff"
-                sx={{
-                  padding: "20px 0 10px 0",
-                  fontSize: "40px",
-                  float: "right",
-                  fontFamily: "ChakraPetch SemiBold"
-                }}
-            >
-              photography
-            </Typography>
-          <Divider />
-        </Box>
-      </Grid>
-
-      <Grid container sx={{ padding: "2em", marginTop: "5em" }}>
-          <Grid
-            item
-            display="grid"
-            gridTemplateColumns={{
-              xs: "repeat(3, 1fr)",
-              sm: "repeat(6, 1fr)",
-              md: "repeat(9, 1fr)",
-              lg: "repeat(12, 1fr)",
-            }}
-            gap={3}
-          >
-            <CardMedia />
-          </Grid>
-      </Grid>
-
-      <Grid container>
-        <Box
-          sx={{
-            display: { xs: "flex" },
-            width: "100%",
-            height: "auto",
-          }}
-        >
-            <Typography
-                color="#fff"
-                sx={{
-                  padding: "20px 0 10px 0",
-                  fontSize: "40px",
-                  float: "right",
-                  fontFamily: "ChakraPetch SemiBold"
-                }}
-            >
-              graphic design
-            </Typography>
-          <Divider />
-        </Box>
-      </Grid>
-
-      <Grid container sx={{ padding: "2em", marginTop: "5em" }}>
-          <Grid
-            item
-            display="grid"
-            gridTemplateColumns={{
-              xs: "repeat(3, 1fr)",
-              sm: "repeat(6, 1fr)",
-              md: "repeat(9, 1fr)",
-              lg: "repeat(12, 1fr)",
-            }}
-            gap={3}
-          >
-            <CardMedia />
-          </Grid>
-      </Grid>
+      {categories.map((category: { title: string; url: string }) => {
+        return (
+          <List>
+            <Button
+              sx={{
+                color: "#fff",
+                width: "auto",
+                border: "1px solid #0a0a0a",
+                textTransform: "none",
+                fontSize: "50px",
+                fontFamily: "ChakraPetch Bold",
+                transition: "0.5s",
+                borderRadius: "5px",
+                justifyContent: "flex-start",
+                "&:hover": {
+                  border: "1px solid #7a7a7a",
+                  color: "#fff",
+                  borderRadius: "12px",
+                  transition: "0.5s",
+                },
+                "& .MuiTypography": {
+                  padding: "0 5px 0 5px",
+                }
+              }}>
+              <a href={category.url} style={{ textDecoration: "none", color: "#fff" }}>
+                {category.title}
+              </a>
+            </Button>
+          </List>
+        );
+      })}
     </Container>
-    );
-  }
-   
+  );
+}
+
 export default Projects;

@@ -4,7 +4,6 @@ import NavDrawer from './NavDrawer';
 import HeaderProps from '../models/Header';
 import NavLink from './NavLink';
 import { getSections } from './sections';
-import { ParallaxLayer } from "@react-spring/parallax";
 
 function Header({ handleDrawerToggle, mobileOpen }: HeaderProps) {
 
@@ -14,7 +13,9 @@ function Header({ handleDrawerToggle, mobileOpen }: HeaderProps) {
       <AppBar
       position="fixed"
         sx={{
-          backgroundColor: "transparent",
+          background:
+          'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
+          'rgba(0,0,0,0.2) 50%, rgba(0,0,0,0) 100%)',
           boxShadow: 0,
           paddingTop: "0.5em",
         }}
