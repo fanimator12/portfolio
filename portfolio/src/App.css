@@ -29,7 +29,7 @@ body::-webkit-scrollbar {
 }
 
 .parallax::-webkit-scrollbar {
-  display: none;
+  /* display: none; */
 }
 
 @keyframes xAxis {

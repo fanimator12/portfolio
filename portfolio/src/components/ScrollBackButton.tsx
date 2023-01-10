@@ -5,11 +5,11 @@ import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp
 function ScrollBackButton() {
     return (
         <ParallaxLayer
-            offset={8}
+            offset={9}
             speed={1}
         >
             <a href="/">
-                <Button style={{ color: "#fff", position: "fixed", bottom: "40px", right: "50px", zIndex: "30" }}>
+                <Button style={{ color: "#fff", position: "fixed", bottom: "60px", right: "50px", zIndex: "30" }}>
                     <KeyboardDoubleArrowUpIcon sx={{ fontSize: "100px" }} />
                 </Button>
             </a>

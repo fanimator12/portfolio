@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "../components/ScrollToTop";
 import About from "../routes/about";
-import GraphicDesign from "../routes/graphic_design";
 import Home from "../routes/home";
 import Photography from "../routes/photography";
 import Portfolio from "../routes/portfolio";
@@ -19,7 +18,6 @@ const AppRouter = () => {
           <Route path="services" element={<Services />} />
           <Route path="software-projects" element={<Software />} />
           <Route path="photography" element={<Photography/>} />
-          <Route path="graphic-design" element={<GraphicDesign />} />
           <Route
             path="*"
             element={

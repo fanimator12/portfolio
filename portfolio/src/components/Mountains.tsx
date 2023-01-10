@@ -3,13 +3,15 @@ import mountains from "../photos/3.png";
 function Mountains() {
   return (
     <ParallaxLayer
-      offset={8}
-      speed={1.5}
+      offset={9.58}
+      speed={1.8}
       style={{
+        float: "left",
         backgroundImage: `url(${mountains})`,
+        bottom: 0,
         backgroundSize: "100%",
+        width: "80%",
         height: "100%",
-        top: '32em'
       }}
     ></ParallaxLayer>
   );

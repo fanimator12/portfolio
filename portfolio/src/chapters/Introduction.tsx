@@ -16,7 +16,7 @@ function Introduction() {
       </div>
 
       <div className="title">
-        <h2>Software Engineer and Designer</h2>
+        <h2>Software Engineer and Photographer</h2>
       </div>
 
     </ParallaxLayer>

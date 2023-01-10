@@ -11,7 +11,6 @@ function About() {
 
   const details = getDetails();
   const [pages, setPages] = useState<number>();
-  const [offset, setOffset] = useState<number>();
 
   useEffect(() => {
     document.title = "about | fanimator";
@@ -19,15 +18,12 @@ function About() {
   });
 
   function resize() {
-    if (window.matchMedia("(min-width: 900px)").matches) {
-      setPages(2.5);
-      setOffset(2.5);
-    } else if (window.matchMedia("(min-width: 600px)").matches) {
-      setPages(3);
-      setOffset(2.8);
-    } else {
+    if (window.matchMedia("(max-width: 600px)").matches) {
+      setPages(4);
+    } else if (window.matchMedia("(max-width: 900px)").matches) {
       setPages(3.5);
-      setOffset(3);
+    } else {
+      setPages(2.1);
     }
   }
 
@@ -234,28 +230,33 @@ function About() {
                     : ""}
                 </Grid>
               </Container>
+
+              
             </ParallaxLayer>
+
+            <ParallaxLayer
+            offset={1.45}
+            speed={0.8}
+            style={{
+              display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  position:"absolute",
+                  bottom: 0,
+            }}
+            >
+            {/* <Container
+                sx={{
+                  
+                }}> */}
+                <Grid sx={{ zIndex: 2 }}>
+                  <img style={{ width: "30em",  bottom: 0 }} src={lookingUp} />
+                </Grid>
+              {/* </Container> */}
+              </ParallaxLayer>
           </Container>
         )}
       </Container>
-
-      <ParallaxLayer offset={offset}
-        speed={2.5}
-        style={{ zIndex: 2 }}>
-        <Container
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            marginTop: "-21em",
-            position: "relative",
-            bottom: 0,
-          }}>
-          <Grid sx={{ zIndex: 2 }}>
-            <img style={{ width: "30em", paddingTop: "25em", bottom: 0 }} src={lookingUp} />
-          </Grid>
-        </Container>
-      </ParallaxLayer>
     </Parallax>
   </>
   );

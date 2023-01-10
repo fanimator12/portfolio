@@ -5,12 +5,12 @@ function Background() {
     <ParallaxLayer
       offset={1}
       speed={1}
-      factor={15}
+      factor={16}
       style={{
         backgroundImage: `url(${sky})`,
         backgroundSize: 'cover',
         width: '100%',
-        marginTop: '20em',
+        marginTop: '100em',
         zIndex: '-1'
       }}>
     </ParallaxLayer>

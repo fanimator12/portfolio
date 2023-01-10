@@ -17,7 +17,7 @@ function Home() {
     });
 
     return (
-        <Parallax pages={9} className="parallax">
+        <Parallax pages={10} className="parallax">
             <DeepSpace />
             <Background />
             <Introduction />

@@ -52,12 +52,11 @@ let yOffset = 0;
 function Castle() {
   return (
     <ParallaxLayer
-      offset={8}
+      offset={9.2}
       factor={5}
       speed={0.3}
       style={{
         backgroundColor: "transparent",
-        top: "140px",
       }}
     >
         <img id="castle" src={castle_picture} />
