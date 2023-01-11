@@ -31,7 +31,7 @@ function ProjectItem({ project }: { project: Project }) {
                     alignItems="center"
                 >
                     <Image
-                        src={project.url}
+                        src={project.image}
                         style={{
                             transitionDuration: "500ms",
                             animation:
