@@ -3,7 +3,7 @@ export interface Project {
     image: string,
     title: string,
     type: string,
-    url: string | null,
+    url: string,
     description: string,
     technologies: string,
 }

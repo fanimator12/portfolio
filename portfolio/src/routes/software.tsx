@@ -5,8 +5,6 @@ import { getProjects } from "../components/projects";
 import { Project } from "../models/Project";
 
 function Software() {
-    const [project, setProject] = useState<Project>();
-
     const projects = getProjects();
 
     useEffect(() => {

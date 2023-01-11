@@ -60,3 +60,7 @@ const projects = [
 export function getProjects() {
     return projects;
 }
+
+export function getProject(projectId:string) {
+    return projects[parseInt(projectId) - 1];
+}

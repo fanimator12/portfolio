@@ -1,9 +1,9 @@
 export interface ProjectBox {
     id: number,
-    image: string | null,
+    image: string,
     title: string,
     type: string,
-    url: string | null,
-    description: string | null,
-    technologies: string | null,
+    url: string,
+    description: string,
+    technologies: string,
 }

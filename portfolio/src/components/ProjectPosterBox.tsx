@@ -24,7 +24,7 @@ const ProjectPosterBox = ({
         justifyContent="center"
         flexDirection="column"
       >
-         <LinkRouter to={`/software-projects?projectId=${id}`} key={id}>
+         <LinkRouter to={`/software-projects/${id}`} key={id}>
         <CardMedia
           component="img"
           src={image!}
@@ -43,7 +43,7 @@ const ProjectPosterBox = ({
         />
       </LinkRouter>
 
-        <LinkRouter to={`/software-projects?projectId=${id}`} key={id} style={{textDecoration:"none"}}>
+        <LinkRouter to={`/software-projects/${id}`} key={id} style={{textDecoration:"none"}}>
           <Grid sx={{paddingTop:"18px"}}>
             <Typography
               color="#fff"
