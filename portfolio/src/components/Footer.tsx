@@ -5,7 +5,7 @@ function Footer() {
         <Box
             sx={{
                 display: { xs: "flex" },
-                zIndex: 100
+                zIndex: 100,
             }}
             className="copyright-box"
         >

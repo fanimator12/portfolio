@@ -230,30 +230,23 @@ function About() {
                     : ""}
                 </Grid>
               </Container>
-
-              
             </ParallaxLayer>
 
             <ParallaxLayer
-            offset={1.45}
-            speed={0.8}
-            style={{
-              display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  position:"absolute",
-                  bottom: 0,
-            }}
+              offset={1.45}
+              speed={0.8}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                position: "absolute",
+                bottom: 0,
+              }}
             >
-            {/* <Container
-                sx={{
-                  
-                }}> */}
-                <Grid sx={{ zIndex: 2 }}>
-                  <img style={{ width: "30em",  bottom: 0 }} src={lookingUp} />
-                </Grid>
-              {/* </Container> */}
-              </ParallaxLayer>
+              <Grid sx={{ zIndex: 2 }}>
+                <img style={{ width: "30em", bottom: 0 }} src={lookingUp} />
+              </Grid>
+            </ParallaxLayer>
           </Container>
         )}
       </Container>

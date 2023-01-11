@@ -3,70 +3,74 @@ import { ProjectBox } from "../models/ProjectBox";
 import { Link as LinkRouter } from "react-router-dom";
 
 const ProjectPosterBox = ({
-    id,
-    image,
-    title,
-    url
-  }: ProjectBox) => {
+  id,
+  image,
+  title,
+  type,
+}: ProjectBox) => {
 
-    return (
-      <Box
-        gridColumn="span 3"
-        sx={{
-          width: "100%",
-        }}
+  return (
+    <Box
+      gridColumn="span 3"
+      sx={{
+        width: "100%",
+      }}
+    >
+      <Grid
+        xs={12}
+        container
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        flexDirection="column"
       >
-        <LinkRouter to={url} key={id}>
-          <CardMedia
-            component="img"
-            className="poster"
-            src={image}
-            sx={{
-              borderRadius: "5px",
-              transition: "0.5s",
-              objectFit: "cover",
-              objectPosition: "center",
-              height: { xs: "15em", sm: "20em", md: "25em" },
-              "&:hover": {
-                transform: "scale(1.02)",
-                transition: "all 0.5s",
-              },
-            }}
-          />
+         <LinkRouter to={`/software-projects?projectId=${id}`} key={id}>
+        <CardMedia
+          component="img"
+          src={image!}
+          sx={{
+            borderRadius: "10px",
+            transition: "0.5s",
+            objectFit: "cover",
+            objectPosition: "center",
+            height: "15em",
+            width: "15em",
+            "&:hover": {
+              transform: "scale(1.02)",
+              transition: "all 0.5s",
+            },
+          }}
+        />
+      </LinkRouter>
+
+        <LinkRouter to={`/software-projects?projectId=${id}`} key={id} style={{textDecoration:"none"}}>
+          <Grid sx={{paddingTop:"18px"}}>
+            <Typography
+              color="#fff"
+              className="hover-underline-animation"
+              sx={{
+                fontSize: "20px",
+                fontFamily: "ChakraPetch Regular",
+                textAlign: "center",
+              }}
+            >
+              {title}
+            </Typography>
+            <Typography
+              color="#8a8a8a"
+              sx={{
+                fontSize: "18px",
+                fontFamily: "ChakraPetch Light",
+                textAlign: "center",
+              }}
+            >
+              {type}
+            </Typography>
+          </Grid>
         </LinkRouter>
-  
-{/* TODO if type == photo, don't display the title */}
-        <Grid
-          xs={12}
-          container
-          display="flex"
-          alignItems="center"
-          justifyContent="space-between"
-          flexDirection="row"
-          sx={{ paddingTop: "12px" }}
-        >
-          <LinkRouter to={`/person?personId=${id}`} key={id}>
-            <Grid>
-              <Typography
-                variant="h5"
-                noWrap
-                sx={{
-                  width: {
-                    xs: "auto",
-                    sm: "8em",
-                    md: "11em",
-                  },
-                  fontSize: "1.1em",
-                  fontWeight: "bold",
-                }}
-              >
-                {title}
-              </Typography>
-            </Grid>
-          </LinkRouter>
-        </Grid>
-      </Box>
-    );
-  };
-  
-  export default ProjectPosterBox;
+      </Grid>
+    </Box>
+  );
+};
+
+export default ProjectPosterBox;

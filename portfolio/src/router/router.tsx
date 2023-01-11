@@ -4,6 +4,7 @@ import About from "../routes/about";
 import Home from "../routes/home";
 import Photography from "../routes/photography";
 import Portfolio from "../routes/portfolio";
+import ProjectPage from "../routes/projectPage";
 import Services from "../routes/services";
 import Software from "../routes/software";
 
@@ -17,6 +18,7 @@ const AppRouter = () => {
           <Route path="portfolio" element={<Portfolio />} />
           <Route path="services" element={<Services />} />
           <Route path="software-projects" element={<Software />} />
+          <Route path="project" element={<ProjectPage />} />
           <Route path="photography" element={<Photography/>} />
           <Route
             path="*"
