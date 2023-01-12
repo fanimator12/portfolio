@@ -1,6 +1,6 @@
 import { Box, Stepper, Step, StepLabel, Typography, StepContent, Button, Paper, List } from "@mui/material";
 import { useState } from "react";
-import { getDetails } from "./about";
+import { getDetails } from "../data/about";
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 
 function EducationStepper() {

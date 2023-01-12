@@ -3,7 +3,7 @@ import { Grid, AppBar, Link, Toolbar, Button, IconButton, Box } from '@mui/mater
 import NavDrawer from './NavDrawer';
 import HeaderProps from '../models/Header';
 import NavLink from './NavLink';
-import { getSections } from './sections';
+import { getSections } from '../data/sections';
 
 function Header({ handleDrawerToggle, mobileOpen }: HeaderProps) {
 

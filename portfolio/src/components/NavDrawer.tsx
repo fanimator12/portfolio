@@ -1,7 +1,7 @@
 import { Box, Drawer } from "@mui/material";
 import NavLink from "./NavLink";
 import Header from "../models/Header";
-import { getSections } from "./sections";
+import { getSections } from "../data/sections";
 
 const NavDrawer = ({ handleDrawerToggle, mobileOpen }: Header) => {
 const sections = getSections();

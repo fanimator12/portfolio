@@ -1,7 +1,7 @@
 import { Container, Grid, Typography } from "@mui/material";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { useEffect } from "react";
-import { getDetails } from "../components/about";
+import { getDetails } from "../data/about";
 import DeepSpace from "../components/DeepSpace";
 function Services() {
 

@@ -1,8 +1,7 @@
 import { Container, Grid } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import ProjectPosterBox from "../components/ProjectPosterBox";
-import { getProjects } from "../components/projects";
-import { Project } from "../models/Project";
+import { getProjects } from "../data/projects";
 
 function Software() {
     const projects = getProjects();

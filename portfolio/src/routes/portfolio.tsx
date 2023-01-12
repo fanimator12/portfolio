@@ -1,7 +1,7 @@
 import { Container, Button, List } from "@mui/material";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { useEffect } from "react";
-import { getCategories } from "../components/categories";
+import { getCategories } from "../data/categories";
 import DeepSpace from "../components/DeepSpace";
 
 function Portfolio() {

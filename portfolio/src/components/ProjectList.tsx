@@ -15,6 +15,9 @@ const ProjectList = ({ projects }: ProjectListProps) => {
                     image={project.image}
                     title={project.title}
                     url={project.url}
+                    type={project.type}
+                    description={project.description}
+                    technologies={project.technologies}
                 />
             );
         })

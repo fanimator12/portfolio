@@ -1,6 +1,6 @@
 import { Box, Container, ImageList, ImageListItem } from "@mui/material";
 import { useEffect } from "react";
-import { getPhotos } from "../components/photos";
+import { getPhotos } from "../data/photos";
 
 function srcset(image: string, width: number, height: number, rows = 1, cols = 1) {
     return {

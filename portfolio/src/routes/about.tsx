@@ -2,7 +2,7 @@ import { Button, Container, Grid, Typography } from "@mui/material";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import Image from "mui-image";
 import { useEffect, useState } from "react";
-import { getDetails } from "../components/about";
+import { getDetails } from "../data/about";
 import EducationStepper from "../components/EducationStepper";
 import lookingUp from "../photos/Franciska_PH-23.png";
 import DeepSpace from "../components/DeepSpace";

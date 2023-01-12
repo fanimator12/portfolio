@@ -1,7 +1,7 @@
-import { Container, Button, List, Box, Grid, Typography } from "@mui/material";
+import { Button, Container, Grid, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import Image from "mui-image";
-import { getProject } from "../components/projects";
+import { getProject } from "../data/projects";
 import { useParams } from "react-router-dom";
 import { Project } from "../models/Project";
 
@@ -18,62 +18,105 @@ function ProjectItem({ project }: { project: Project }) {
             <Container
                 sx={{
                     display: "flex",
-                    justifyContent: "space-between",
+                    justifyContent: "center",
                     alignItems: "center",
                     flexDirection: { xs: "column", md: "row" },
-                    height: "30rem",
+                    height: { xs: "40rem", md: "30rem" },
                 }}
             >
-                <Grid
-                    display="flex"
-                    justifyContent="flex-start"
-                    flexDirection="row"
-                    alignItems="center"
-                >
-                    <Image
-                        src={project.image}
-                        style={{
-                            transitionDuration: "500ms",
-                            animation:
-                                "1500ms cubic-bezier(0.7, 0, 0.6, 1) 0s 1 normal none running materialize",
-                            height: "30em",
-                            width: "20em",
-                            borderRadius: "10px",
-                        }}
-                    />
-                </Grid>
 
-                <Container sx={{ width: { md: "35rem" } }}>
-                    <Grid
-                        display="flex"
-                        justifyContent="center"
-                        flexDirection="row"
-                        alignItems="center"
+                <Image
+                    src={`../../${project.image}`}
+                    style={{
+                        transitionDuration: "500ms",
+                        animation:
+                            "1500ms cubic-bezier(0.7, 0, 0.6, 1) 0s 1 normal none running materialize",
+                        height: "18em",
+                        width: "18em",
+                        borderRadius: "10px",
+                    }}
+                />
+                <Container
+                    sx={{
+                        width: { md: "80rem" },
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        textAlign: "center",
+                    }}>
+                    <Typography
+                        color="#fff"
+                        sx={{
+                            fontSize: { xs: "45px", md: "60px" },
+                            float: "right",
+                            fontFamily: "ChakraPetch Bold"
+                        }}
                     >
+                        {project.title}
+                    </Typography>
+                    <Button sx={{
+                        margin: "20px",
+                        padding: "auto",
+                        borderRadius: "5px",
+                        border: "1px solid #1a1a1a",
+                        textTransform: "none",
+                        transition: "0.5s",
+                        "&:hover": {
+                            border: "1px solid #5a5a5a",
+                            color: "#fff",
+                            borderRadius: "12px",
+                            transition: "0.5s",
+                        }
+                    }}>
                         <Typography
                             color="#fff"
                             sx={{
-                                padding: "35px 0 35px 0",
-                                fontSize: "70px",
-                                float: "right",
-                                fontFamily: "ChakraPetch Bold"
+                                fontSize: "20px",
+                                fontFamily: "ChakraPetch Regular",
                             }}
                         >
-                            {project.title}
+                            <Typography
+                                color="#8a8a8a"
+                                sx={{
+                                    fontSize: "18px",
+                                    fontFamily: "ChakraPetch Light",
+                                }}
+                            >
+                                Used technologies:
+                            </Typography>
+                            {project.technologies}
                         </Typography>
-                    </Grid>
+                    </Button>
+
                 </Container>
             </Container>
-            <Typography
-                color="#fff"
-                sx={{
-                    margin: "auto",
-                    padding: "20px",
-                    marginTop: { xs: "20em", sm: "17em", md: 0 },
-                }}
-            >
-                {project.description}
-            </Typography>
+            <Container>
+                <Typography
+                    color="#8a8a8a"
+                    sx={{
+                        fontSize: "20px",
+                        fontFamily: "ChakraPetch Light",
+                    }}
+                >
+                    {project.description}
+
+                    <a href={project.url} target="_blank"
+                        style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            textDecoration: "none",
+                            color: "#fff",
+                            paddingLeft: "5px",
+                            fontFamily: "ChakraPetch SemiBold",
+                            textAlign: "center"
+                        }}
+                    >
+                        <br></br>
+                        {project.url}
+                    </a>
+                </Typography>
+            </Container>
         </>
     );
 }
@@ -104,14 +147,14 @@ function ProjectPage() {
         <Container
             sx={{
                 display: { xs: "block" },
-                paddingTop: "10em",
+                paddingTop: "6em",
                 height: "auto",
                 paddingBottom: "5em"
             }}
         >
             <Container
                 className="content"
-                sx={{ marginTop: "2em", minHeight: "8em" }}
+                sx={{ minHeight: "8em" }}
             >
                 {project && <ProjectItem project={project} />}
             </Container>
