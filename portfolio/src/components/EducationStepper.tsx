@@ -28,10 +28,10 @@ function EducationStepper() {
             <StepLabel
               sx={{
                 "& .MuiStepIcon-root.Mui-active": {
-                  color: "#ffae00",
+                  color: "#00c3ff",
                 },
                 "& .MuiStepIcon-root.Mui-completed": {
-                  color: "#ffae00",
+                  color: "#00c3ff",
                 },
                 "& .Mui-active .MuiStepIcon-text": {
                   fill: "#000",
@@ -39,7 +39,7 @@ function EducationStepper() {
               }}
               optional={
                 <Typography variant="caption"
-                  color="#ffae00"
+                  color="#00c3ff"
                   sx={{
                     fontSize: "23px",
                     fontFamily: "ChakraPetch SemiBold",

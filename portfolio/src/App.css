@@ -202,16 +202,16 @@ h4 {
 }
 
 .gradient {
-  background: #021478; /* fallback for old browsers */
-  background: -webkit-linear-gradient(160deg, #ffae00, #780206);
+  background: #00c3ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(160deg, #00c3ff, #630036);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gradient-background {
-  background: #ffae00; /* fallback for old browsers */
-  background: -webkit-linear-gradient(160deg, #ffae00, #780206); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(160deg, #ffae00, #780206); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #00c3ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(160deg, #00c3ff, #630036); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(160deg, #00c3ff, #630036); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .full-screen-container {
