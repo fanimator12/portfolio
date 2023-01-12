@@ -14,7 +14,8 @@ function Footer() {
                 sx={{
                     float: "right",
                     fontSize: "12px",
-                    fontFamily: "ChakraPetch Light"
+                    fontFamily: "ChakraPetch Light",
+                    padding:"5px"
                 }}>
                 Created with: ReactJS, Vite.js, Typescript, Material UI
                 &copy; {new Date().getFullYear()} Copyright:{" "}
