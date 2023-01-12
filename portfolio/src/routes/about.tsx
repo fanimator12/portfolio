@@ -6,6 +6,7 @@ import { getDetails } from "../data/about";
 import EducationStepper from "../components/EducationStepper";
 import lookingUp from "../photos/Franciska_PH-23.png";
 import DeepSpace from "../components/DeepSpace";
+import Background4 from "../components/Background4";
 
 function About() {
 
@@ -27,11 +28,10 @@ function About() {
     }
   }
 
-  return (<>
-    <Parallax pages={pages!} className="parallax"
-    >
-      <DeepSpace />
-      <Container sx={{ height: "auto", paddingBottom: "5em", zIndex: 2 }}>
+  return (
+  <>
+      <Background4 />
+      <Container sx={{ height: "auto", padding: "8em 0 5em 0"}}>
         {details.map(about =>
           <Container
             sx={{
@@ -41,10 +41,6 @@ function About() {
               height: "auto",
             }}
           >
-            <ParallaxLayer
-              offset={0.15}
-              speed={0.2}
-              style={{ zIndex: 5 }}>
               <Container
                 sx={{
                   display: "flex",
@@ -52,6 +48,7 @@ function About() {
                   alignItems: "center",
                   flexDirection: { xs: "column", md: "row" },
                   height: "auto",
+              zIndex: 50
                 }}
               >
                 <Grid
@@ -97,7 +94,7 @@ function About() {
                       }}
                     >
                       <Typography
-                        color="#9a9a9a"
+                        color="#fff"
                         sx={{
                           fontSize: "20px",
                           fontFamily: "ChakraPetch Light"
@@ -145,6 +142,7 @@ function About() {
                   flexDirection: "column",
                   width: "100%",
                   height: "auto",
+                  zIndex: 50
                 }}
               >
                 <Grid
@@ -192,7 +190,7 @@ function About() {
                 </Grid>
 
                 <Grid
-                  sx={{ padding: "40px 5px 0", zIndex: 5 }}
+                  sx={{ padding: "20px 5px 0", zIndex: 5 }}
                   display="grid"
                   gridTemplateColumns={{
                     xs: "repeat(2, 1fr)",
@@ -207,15 +205,17 @@ function About() {
                       return (
                         <Button
                           sx={{
-                            border: "1px solid #7a7a7a",
-                            color: "#8a8a8a",
+                            border: "1px solid transparent",
+                            color: "#fff",
                             textTransform: "none",
                             fontSize: "15px",
-                            fontFamily: "ChakraPetch Bold",
+                            fontFamily: "ChakraPetch Regular",
+                            borderRadius: "12px",
                             textAlign: "center",
                             transition: "0.5s",
                             "&:hover": {
                               color: "#fff",
+                              border: "1px solid #fff",
                               borderRadius: "12px",
                               transition: "0.5s",
                             },
@@ -230,27 +230,9 @@ function About() {
                     : ""}
                 </Grid>
               </Container>
-            </ParallaxLayer>
-
-            <ParallaxLayer
-              offset={1.45}
-              speed={0.8}
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                position: "absolute",
-                bottom: 0,
-              }}
-            >
-              <Grid sx={{ zIndex: 2 }}>
-                <img style={{ width: "30em", bottom: 0 }} src={lookingUp} />
-              </Grid>
-            </ParallaxLayer>
           </Container>
         )}
       </Container>
-    </Parallax>
   </>
   );
 }

@@ -1,8 +1,7 @@
 import { Container, Button, List } from "@mui/material";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { useEffect } from "react";
+import Background2 from "../components/Background2";
 import { getCategories } from "../data/categories";
-import DeepSpace from "../components/DeepSpace";
 
 function Portfolio() {
 
@@ -13,9 +12,8 @@ function Portfolio() {
   });
 
   return (
-    <Parallax pages={1} className="parallax"
-    >
-      <DeepSpace />
+    <>
+      <Background2 />
       <Container
         sx={{
           display: { xs: "block" },
@@ -26,37 +24,41 @@ function Portfolio() {
       >
         {categories.map((category: { title: string; url: string }) => {
           return (
-            <List>
-              <Button
-                sx={{
-                  color: "#fff",
-                  width: "auto",
-                  border: "1px solid #0a0a0a",
-                  textTransform: "none",
-                  fontSize: "50px",
-                  fontFamily: "ChakraPetch Bold",
-                  transition: "0.5s",
-                  borderRadius: "5px",
-                  justifyContent: "flex-start",
-                  "&:hover": {
-                    border: "1px solid #7a7a7a",
+            <>
+              <List>
+                <Button
+                  sx={{
+                    zIndex: 5,
                     color: "#fff",
-                    borderRadius: "12px",
+                    width: "auto",
+                    border: "1px solid transparent",
+                    textTransform: "none",
+                    fontSize: "50px",
+                    fontFamily: "ChakraPetch Bold",
                     transition: "0.5s",
-                  },
-                  "& .MuiTypography": {
-                    padding: "0 5px 0 5px",
-                  }
-                }}>
-                <a href={category.url} style={{ textDecoration: "none", color: "#fff" }}>
-                  {category.title}
-                </a>
-              </Button>
-            </List>
+                    borderRadius: "5px",
+                    justifyContent: "flex-start",
+                    "&:hover": {
+                      border: "1px solid #7a7a7a",
+                      color: "#fff",
+                      borderRadius: "12px",
+                      transition: "0.5s",
+                    },
+                    "& .MuiTypography": {
+                      padding: "0 5px 0 5px",
+                    }
+                  }}>
+                  <a href={category.url} style={{ textDecoration: "none", color: "#fff" }}>
+                    {category.title}
+                  </a>
+                </Button>
+              </List>
+            </>
           );
         })}
+
       </Container>
-    </Parallax>
+    </>
   );
 }
 

@@ -24,7 +24,7 @@ function EducationStepper() {
     <Box sx={{ width: "100%", justifyContent: "center", alignItems: "center", background: "transparent" }}>
       <Stepper activeStep={activeStep} orientation="vertical">
         {about[0].education.map((step, index) => (
-          <Step key={step.school} sx={{ border: "1px solid #3a3a3a", borderRadius: "6px", padding: "0 12px 0 12px" }}>
+          <Step key={step.school} sx={{ border: "1px solid #fff", borderRadius: "6px", padding: "0 12px 0 12px" }}>
             <StepLabel
               sx={{
                 "& .MuiStepIcon-root.Mui-active": {
@@ -95,7 +95,7 @@ function EducationStepper() {
                   </Box>
 
                   <Typography
-                    color="#8a8a8a"
+                    color="#fff"
                     sx={{
                       paddingTop: "8px",
                       fontSize: "14px",

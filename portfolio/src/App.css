@@ -202,7 +202,7 @@ h4 {
 }
 
 .gradient {
-  background: #780206; /* fallback for old browsers */
+  background: #021478; /* fallback for old browsers */
   background: -webkit-linear-gradient(160deg, #ffae00, #780206);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -212,4 +212,71 @@ h4 {
   background: #ffae00; /* fallback for old browsers */
   background: -webkit-linear-gradient(160deg, #ffae00, #780206); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(160deg, #ffae00, #780206); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.full-screen-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  transition: 0.5s;
+}
+
+.full-screen-container .backgroundVideo {
+  z-index: 1;
+  position: fixed;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter:blur(30px);
+  transition: 0.5s;
+  transition: 0.5s ease-in;
+}
+
+.full-screen-container .backgroundVideo2 {
+  z-index: 1;
+  position: fixed;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  top: 10%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  filter:blur(20px);
+  transition: 0.5s ease-in;
+}
+
+.full-screen-container .backgroundVideo3 {
+  z-index: 1;
+  position: fixed;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  top: 90%;
+  left: 80%;
+  transform: translate(-80%, -50%);
+  filter:blur(30px);
+  transition: 0.5s ease-in;
+}
+
+.full-screen-container .backgroundVideo4 {
+  z-index: 1;
+  position: fixed;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  top: 50%;
+  left: 80%;
+  transform: translate(-90%, -80%);
+  filter:blur(40px);
+  transition: 0.5s ease-in;
 }

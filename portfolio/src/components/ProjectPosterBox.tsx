@@ -14,6 +14,7 @@ const ProjectPosterBox = ({
       gridColumn="span 3"
       sx={{
         width: "100%",
+        zIndex: 5
       }}
     >
       <Grid
@@ -36,7 +37,7 @@ const ProjectPosterBox = ({
             height: "15em",
             width: "15em",
             "&:hover": {
-              transform: "scale(1.02)",
+              transform: "scale(1.05)",
               transition: "all 0.5s",
             },
           }}
@@ -47,17 +48,16 @@ const ProjectPosterBox = ({
           <Grid sx={{paddingTop:"18px"}}>
             <Typography
               color="#fff"
-              className="hover-underline-animation"
               sx={{
-                fontSize: "20px",
-                fontFamily: "ChakraPetch Regular",
+                fontSize: "25px",
+                fontFamily: "ChakraPetch Bold",
                 textAlign: "center",
               }}
             >
               {title}
             </Typography>
             <Typography
-              color="#8a8a8a"
+              color="#fff"
               sx={{
                 fontSize: "18px",
                 fontFamily: "ChakraPetch Light",
