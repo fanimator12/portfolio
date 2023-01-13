@@ -1,4 +1,4 @@
-import supernova from "../photos/supernova.png";
+import supernova from "../../public/supernova.png";
 
 import { ParallaxLayer } from "@react-spring/parallax";
 function Supernova() {

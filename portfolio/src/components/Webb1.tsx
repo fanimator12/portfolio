@@ -1,4 +1,4 @@
-import webb1 from "../photos/webb1.png";
+import webb1 from "../../public/webb1.png";
 
 import { ParallaxLayer } from "@react-spring/parallax";
 function Webb1() {

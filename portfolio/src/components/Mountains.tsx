@@ -1,5 +1,5 @@
 import { ParallaxLayer } from "@react-spring/parallax";
-import mountains from "../photos/3.png";
+import mountains from "../../public/3.png";
 function Mountains() {
   return (
     <ParallaxLayer

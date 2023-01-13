@@ -1,4 +1,4 @@
-const url = "src/data/"
+const url = "public/"
 
 const projects = [
     {

@@ -1,7 +1,7 @@
 import { Container, ImageList, ImageListItem, LinearProgress, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { srcset } from "../components/srcset";
-import { getPhotos } from "../photos/photos";
+import { getPhotos } from "../data/photos";
 
 function Photography() {
 

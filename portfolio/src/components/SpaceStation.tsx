@@ -1,4 +1,4 @@
-import spacestation from "../photos/spacestation.png";
+import spacestation from "../../public/spacestation.png";
 
 import { ParallaxLayer } from "@react-spring/parallax";
 function SpaceStation() {

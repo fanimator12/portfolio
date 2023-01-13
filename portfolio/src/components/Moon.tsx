@@ -1,4 +1,4 @@
-import moon from "../photos/moon.png";
+import moon from "../../public/moon.png";
 
 import { ParallaxLayer } from "@react-spring/parallax";
 function Moon() {

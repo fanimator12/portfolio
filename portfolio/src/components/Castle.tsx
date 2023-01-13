@@ -1,5 +1,5 @@
 import { ParallaxLayer } from "@react-spring/parallax";
-import castle_picture from "../photos/castlebody.png";
+import castle_picture from "../../public/castlebody.png";
 
 function Castle() {
   return (

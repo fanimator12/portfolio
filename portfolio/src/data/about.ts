@@ -1,7 +1,7 @@
 const about = [
   {
     name: 'Franciska Török',
-    profile: "src/photos/profile.jpg",
+    profile: "../public/profile.JPG",
     age: new Date().getFullYear() - 2000,
     education: [
       {

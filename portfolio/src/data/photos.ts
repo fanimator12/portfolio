@@ -1,4 +1,4 @@
-const url = 'src/photos/';
+const url = 'public/';
 
 const photos = [
   {
