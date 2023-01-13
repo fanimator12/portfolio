@@ -99,7 +99,6 @@ function Portfolio() {
         ) : (
           <Typography
             color="#fff"
-            className="reveal"
             sx={{
               position: "absolute",
               left: 0,

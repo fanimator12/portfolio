@@ -172,7 +172,6 @@ function Services() {
         ) : (
           <Typography
             color="#fff"
-            className="reveal"
             sx={{
               position: "absolute",
               left: 0,

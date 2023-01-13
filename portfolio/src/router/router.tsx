@@ -14,12 +14,12 @@ const AppRouter = () => {
       <ScrollToTop>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="about" element={<About/>} />
-          <Route path="portfolio" element={<Portfolio />} />
-          <Route path="services" element={<Services />} />
-          <Route path="software-projects" element={<Software />} />
-          <Route path="software-projects/:projectId" element={<ProjectPage />} />
-          <Route path="photography" element={<Photography/>} />
+          <Route path="/about" element={<About/>} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/software-projects" element={<Software />} />
+          <Route path="/software-projects/:projectId" element={<ProjectPage />} />
+          <Route path="/photography" element={<Photography/>} />
           <Route
             path="*"
             element={
