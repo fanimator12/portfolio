@@ -226,7 +226,7 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  transition: 0.5s;
+  transition: 1.5s ease-in;
 }
 
 .full-screen-container .backgroundVideo {
@@ -240,8 +240,7 @@ h4 {
   left: 50%;
   transform: translate(-40%, -80%);
   filter: blur(20px);
-  transition: 0.5s;
-  transition: 0.5s ease-in;
+  transition: 1.5s ease-in;
 }
 
 .full-screen-container .backgroundVideo2 {
@@ -255,7 +254,7 @@ h4 {
   left: 20%;
   transform: translate(-50%, -50%);
   filter: blur(20px);
-  transition: 0.5s ease-in;
+  transition: 1.5s ease-in;
 }
 
 .full-screen-container .backgroundVideo3 {
@@ -269,7 +268,7 @@ h4 {
   left: 80%;
   transform: translate(-80%, -50%);
   filter: blur(30px);
-  transition: 0.5s ease-in;
+  transition: 1.5s ease-in;
 }
 
 .full-screen-container .backgroundVideo4 {
@@ -283,5 +282,5 @@ h4 {
   left: 80%;
   transform: translate(-90%, -80%);
   filter: blur(40px);
-  transition: 0.5s ease-in;
+  transition: 1.5s ease-in;
 }
