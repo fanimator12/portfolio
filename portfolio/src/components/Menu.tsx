@@ -1,5 +1,5 @@
 import { Box, Button } from "@mui/material";
-import { getSections } from "./sections";
+import { getSections } from "../data/sections";
 
 function Menu() {
 
