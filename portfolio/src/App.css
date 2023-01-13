@@ -12,6 +12,10 @@ body {
   height: 100%;
   overflow-x: hidden;
   background: rgb(0, 0, 0);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 html {
@@ -31,7 +35,7 @@ body::-webkit-scrollbar {
 }
 
 .parallax::-webkit-scrollbar {
-  /* display: none; */
+  display: none;
 }
 
 @keyframes xAxis {
@@ -78,21 +82,6 @@ body::-webkit-scrollbar {
 #castle::after {
   animation: yAxis 4s infinite ease-in-out;
 }
-
-h1 {
-  color: #fff;
-  text-transform: lowercase;
-  font: normal normal normal 50px/1px Ghibli;
-}
-
-h2,
-h3,
-h4 {
-  color: #fff;
-  text-transform: lowercase;
-  font: normal normal normal 20px/10px Ghibli;
-}
-
 
 @keyframes move-twinkle-back {
   from {
@@ -171,6 +160,32 @@ h4 {
 }
 
 .hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.hover-underline-animation2 {
+  display: inline-block;
+  position: relative;
+  color: #fff;
+  border-radius: 50px;
+}
+
+.hover-underline-animation2:after {
+  content: "";
+  position: absolute;
+  border-radius: 50px;
+  width: 100%;
+  transform: scaleX(0);
+  height: 5px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.5s ease-out;
+}
+
+.hover-underline-animation2:hover:after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }

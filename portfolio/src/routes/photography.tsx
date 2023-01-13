@@ -1,14 +1,7 @@
 import { Container, ImageList, ImageListItem, LinearProgress, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
+import { srcset } from "../components/srcset";
 import { getPhotos } from "../data/photos";
-
-function srcset(image: string, width: number, height: number, rows = 1, cols = 1) {
-    return {
-        src: `${image}?w=${width * cols}&h=${height * rows}&fit=crop&auto=format`,
-        srcSet: `${image}?w=${width * cols}&h=${height * rows
-            }&fit=crop&auto=format&dpr=2 2x`,
-    };
-}
 
 function Photography() {
 

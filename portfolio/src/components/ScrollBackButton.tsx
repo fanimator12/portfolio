@@ -7,6 +7,9 @@ function ScrollBackButton() {
         <ParallaxLayer
             offset={9}
             speed={1}
+            style={{
+                zIndex: 5
+            }}
         >
             <a href="/">
                 <Button style={{ color: "#fff", position: "fixed", bottom: "60px", right: "50px", zIndex: "30" }}>

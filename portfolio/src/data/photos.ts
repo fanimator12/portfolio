@@ -66,7 +66,6 @@ const photos = [
     img: url + '12.JPG',
     title: 'Male Portrait',
   },
-
   {
     img: url + '6.JPG',
     title: 'Female Portrait',
@@ -78,17 +77,14 @@ const photos = [
   {
     img: url + '22.JPG',
     title: 'CERN Data Centre',
-    featured: true,
   },
   {
     img: url + '9.JPG',
     title: 'CERN CMS Experiment',
-    featured: true,
   },
   {
     img: url + '27.JPG',
     title: 'CERN Alice Experiment',
-    featured: true,
   },
   // SECOND ROW
   {
@@ -166,10 +162,52 @@ const photos = [
   {
     img: url + '30.JPG',
     title: 'CERN Silicon Detector',
-    featured: true,
   },
+];
+
+const selectedPhotos = [
+  {
+    img: url + '44.JPG',
+    title: 'Budapest National Museum',
+  },
+  {
+    img: url + '39.JPG',
+    title: 'Wheat in Botanical Garden Copenhagen',
+  },
+  {
+    img: url + '32.JPG',
+    title: 'Dress',
+  },
+  {
+    img: url + '6.JPG',
+    title: 'Female Portrait',
+  },
+  {
+    img: url + '35.JPG',
+    title: 'Amsterdam Sunset',
+  },
+  {
+    img: url + '25.JPG',
+    title: 'CERN Alice Experiment',
+  },
+  {
+    img: url + '22.JPG',
+    title: 'CERN Data Centre',
+  },
+  {
+    img: url + '28.JPG',
+    title: 'Hug',
+  },
+  {
+    img: url + '20.JPG',
+    title: 'Clavicula',
+  }
 ];
 
 export function getPhotos() {
   return photos;
+}
+
+export function getSelectedPhotos() {
+  return selectedPhotos;
 }

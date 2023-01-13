@@ -1,24 +1,42 @@
+import { Typography } from "@mui/material";
 import { ParallaxLayer } from "@react-spring/parallax";
+import about from "../routes/about";
 function Introduction() {
   return (
     <ParallaxLayer
       offset={0}
       speed={0.5}
       style={{
-        top: "300px",
+        display: "flex",
+        justifyContent: "center",
+        textAlign: "center",
+        alignItems: "center",
       }}>
-      <div className="title">
-        <h1>Hi there</h1>
+      <div>
+        <Typography
+          className="title"
+          color="#fff"
+          sx={{
+            fontFamily: "Ghibli",
+            textTransform: "lowercase",
+            fontSize: "50px",
+          }}
+        >
+          Hi there, I'm Fanimator
+        </Typography>
+        <br></br>
+        <Typography
+          className="title h1"
+          color="#fff"
+          sx={{
+            fontFamily: "Ghibli",
+            textTransform: "lowercase",
+            fontSize: "20px",
+          }}
+        >
+          Software Engineer and Photographer
+        </Typography>
       </div>
-
-      <div className="title">
-        <h1>I'm Fanimator</h1>
-      </div>
-
-      <div className="title">
-        <h2>Software Engineer and Photographer</h2>
-      </div>
-
     </ParallaxLayer>
   );
 }
