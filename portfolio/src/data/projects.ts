@@ -1,9 +1,9 @@
-const url = "src/data/projects/"
+const url = "./projects/"
 
 const projects = [
     {
         id: 1,
-        image: url + "academictraining.svg",
+        image: "./projects/academictraining.svg",
         title: "CERN Academic Training",
         type: "website",
         url: "https://academictraining-admin.docs.cern.ch/",
@@ -12,7 +12,7 @@ const projects = [
     },
     {
         id: 2,
-        image: url + "bestmovies.png",
+        image: "./projects/bestmovies.png",
         title: "BestMovies",
         type: "website",
         url: "https://best-movies-app.vercel.app/",
@@ -21,7 +21,7 @@ const projects = [
     },
     {
         id: 3,
-        image: url + "bucketlist.svg",
+        image: "./projects/bucketlist.svg",
         title: "My Bucket List",
         type: "mobile app",
         url: "https://www.youtube.com/watch?v=o-OT6SNeHtc",
@@ -30,7 +30,7 @@ const projects = [
     },
     {
         id: 4,
-        image: url + "smartfarm.png",
+        image: "./projects/smartfarm.png",
         title: "SmartFarm",
         type: "mobile app",
         url: "https://www.youtube.com/watch?v=0PO49tOscFI",
@@ -39,7 +39,7 @@ const projects = [
     },
     {
         id: 5,
-        image: url + "artwebshop.png",
+        image: "./projects/artwebshop.png",
         title: "Art Web Shop",
         type: "website",
         url: "https://www.youtube.com/watch?v=QHBPBrntCOA",
@@ -48,7 +48,7 @@ const projects = [
     },
     {
         id: 6,
-        image: url + "vikarservice.png",
+        image: "./projects/vikarservice.png",
         title: "Online Vikar Service",
         type: "app",
         url: "https://www.youtube.com/watch?v=FEd1krjfm0g",
