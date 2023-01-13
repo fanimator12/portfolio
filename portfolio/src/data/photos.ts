@@ -149,7 +149,7 @@ const photos = [
   },
   {
     img: url + '18.JPG',
-    title: 'Selfportrait',
+    title: 'Male portrait',
   },
   {
     img: url + '20.JPG',

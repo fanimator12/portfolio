@@ -1,6 +1,8 @@
-*, html, body{
-  cursor: url(./photos/cursor.png),  auto;
-} 
+*,
+html,
+body {
+  cursor: url(./photos/cursor.png), auto;
+}
 
 html,
 body {
@@ -201,16 +203,20 @@ h4 {
 }
 
 .gradient {
-  background: #00c3ff; /* fallback for old browsers */
+  background: #00c3ff;
+  /* fallback for old browsers */
   background: -webkit-linear-gradient(160deg, #00c3ff, #630036);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gradient-background {
-  background: #00c3ff; /* fallback for old browsers */
-  background: -webkit-linear-gradient(160deg, #00c3ff, #630036); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(160deg, #00c3ff, #630036); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #00c3ff;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(160deg, #00c3ff, #630036);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(160deg, #00c3ff, #630036);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .full-screen-container {
@@ -232,8 +238,8 @@ h4 {
   min-height: 100%;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  filter:blur(30px);
+  transform: translate(-40%, -80%);
+  filter: blur(20px);
   transition: 0.5s;
   transition: 0.5s ease-in;
 }
@@ -248,7 +254,7 @@ h4 {
   top: 10%;
   left: 20%;
   transform: translate(-50%, -50%);
-  filter:blur(20px);
+  filter: blur(20px);
   transition: 0.5s ease-in;
 }
 
@@ -262,7 +268,7 @@ h4 {
   top: 90%;
   left: 80%;
   transform: translate(-80%, -50%);
-  filter:blur(30px);
+  filter: blur(30px);
   transition: 0.5s ease-in;
 }
 
@@ -276,6 +282,6 @@ h4 {
   top: 50%;
   left: 80%;
   transform: translate(-90%, -80%);
-  filter:blur(40px);
+  filter: blur(40px);
   transition: 0.5s ease-in;
 }

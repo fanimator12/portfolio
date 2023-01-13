@@ -1,4 +1,4 @@
-import { Button, Container, Grid, Typography } from "@mui/material";
+import { Button, Container, Grid, LinearProgress, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import Image from "mui-image";
 import { getProject } from "../data/projects";
@@ -123,6 +123,7 @@ function ProjectItem({ project }: { project: Project }) {
 
 function ProjectPage() {
 
+    const [loading, setLoading] = useState(true);
     const [project, setProject] = useState<any>({});
     let { projectId } = useParams();
 
@@ -130,10 +131,17 @@ function ProjectPage() {
         try {
             const results = await getProject(projectId!);
             setProject(results);
+            componentDidMount();
         } catch (error) {
             setProject({});
         }
     };
+
+    function componentDidMount() {
+        setTimeout(function () {
+            setLoading(false)
+        }.bind(loading), 1000)
+    }
 
     useEffect(() => {
         initLoad();
@@ -144,21 +152,63 @@ function ProjectPage() {
     }, [projectId]);
 
     return (
-        <Container
-            sx={{
-                display: { xs: "block" },
-                paddingTop: "6em",
-                height: "auto",
-                paddingBottom: "5em"
-            }}
-        >
-            <Container
-                className="content"
-                sx={{ minHeight: "8em" }}
-            >
-                {project && <ProjectItem project={project} />}
-            </Container>
-        </Container>
+        <>
+            {loading ? (
+                <LinearProgress
+                    color="secondary"
+                    sx={{
+                        borderRadius: "5px",
+                        width: "60px",
+                        height: "2px",
+                        position: "absolute",
+                        left: 0,
+                        right: 0,
+                        top: 0,
+                        bottom: 0,
+                        margin: "auto",
+                        display: "flex",
+                        justifyContent: "center",
+                        textAlign: "center",
+                        alignItems: "center",
+                    }}
+                />
+            ) : project !== undefined ? (
+                <Container
+                    sx={{
+                        display: { xs: "block" },
+                        paddingTop: "6em",
+                        height: "auto",
+                        paddingBottom: "5em"
+                    }}
+                >
+                    <Container
+                        className="content"
+                        sx={{ minHeight: "8em" }}
+                    >
+                        {project && <ProjectItem project={project} />}
+                    </Container>
+                </Container>
+            ) : (
+                <Typography
+                    color="#fff"
+                    className="reveal"
+                    sx={{
+                        position: "absolute",
+                        left: 0,
+                        right: 0,
+                        top: 0,
+                        bottom: 0,
+                        margin: "auto",
+                        display: "flex",
+                        justifyContent: "center",
+                        textAlign: "center",
+                        alignItems: "center",
+                    }}
+                >
+                    Oops! <br></br> Nothing's here.
+                </Typography>
+            )}
+        </>
     );
 }
 
