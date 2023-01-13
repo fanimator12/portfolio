@@ -24,7 +24,7 @@ function Photography() {
 
     const initLoad = async () => {
         if (photos != null) {
-            getPhotos();
+            await getPhotos();
             componentDidMount();
         }
     };

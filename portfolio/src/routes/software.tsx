@@ -17,7 +17,7 @@ function Software() {
 
     const initLoad = async () => {
         if (projects != null) {
-            getProjects();
+            await getProjects();
             componentDidMount();
         }
     };

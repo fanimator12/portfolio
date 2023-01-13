@@ -31,8 +31,8 @@ function Services() {
 
   const initLoad = async () => {
     if (services != null && about != null) {
-      getServices();
-      getDetails();
+      await getServices();
+      await getDetails();
       componentDidMount();
     }
   };

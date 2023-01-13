@@ -16,7 +16,7 @@ function Portfolio() {
 
   const initLoad = async () => {
     if (categories != null) {
-      getCategories();
+      await getCategories();
       componentDidMount();
     }
   };
