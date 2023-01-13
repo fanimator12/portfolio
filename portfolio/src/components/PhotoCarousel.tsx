@@ -1,6 +1,6 @@
 import { ParallaxLayer } from "@react-spring/parallax";
 import Carousel from "react-material-ui-carousel";
-import { getSelectedPhotos } from "../data/photos";
+import { getSelectedPhotos } from "../photos/photos";
 function PhotoCarousel() {
 
     const photos = getSelectedPhotos();
