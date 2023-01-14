@@ -107,12 +107,12 @@ body::-webkit-scrollbar {
 }
 
 .stars {
-  background: #000 url(photos/stars.png) repeat top center;
+  background: #000 url(/stars.png) repeat top center;
   z-index: -2;
 }
 
 .twinkling {
-  background: transparent url(photos/twinkling.png) repeat top center;
+  background: transparent url(/twinkling.png) repeat top center;
   z-index: -1;
   animation: move-twinkle-back 200s linear infinite;
 }
