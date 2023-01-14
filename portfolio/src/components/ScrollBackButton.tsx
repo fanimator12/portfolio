@@ -8,7 +8,7 @@ function ScrollBackButton() {
             offset={9}
             speed={1}
             style={{
-                zIndex: 5
+                zIndex: 60
             }}
         >
             <a href="/">
