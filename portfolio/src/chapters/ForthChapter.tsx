@@ -9,20 +9,24 @@ function FirstChapter() {
         display: "flex",
         justifyContent: "center",
         textAlign: "center",
-        alignItems: "center"
+        alignItems: "center",
+        zIndex: 6,
       }}>
       <div>
         <Typography
           className="title"
-          color="#000"
+          color="rgba(0, 0, 0, 0.5)"
           sx={{
             fontFamily: "Ghibli",
             textTransform: "none",
             fontSize: "30px",
-            padding: "60px"
+            padding: "60px",
+            display: "inline-block",
           }}
         >
-          Additionally, I am excited to share<br/>my unique perspective and style in photography with you. 
+          Additionally, I am excited to share<br />my unique perspective and style in <a className="hover-underline-animation3" href="/photography" style={{ color: "rgba(0, 0, 0, 0.8)", textDecoration: "none", fontWeight: "600" }}>
+            photography
+          </a>{" "} with you.
         </Typography>
       </div>
     </ParallaxLayer>

@@ -27,7 +27,7 @@ function SixthChapter() {
                     }}
                 >
                     If you would like to learn more{" "}
-                    <a className="hover-underline-animation2" href="/about" style={{ color: "rgba(255, 255, 255, 0.8)", textDecoration: "none", fontWeight:"600" }}>
+                    <a className="hover-underline-animation2" href="/about" style={{ color: "#fff", textDecoration: "none", fontWeight:"600"}}>
                         about
                     </a>{" "}me, <br />please feel free to read further.
                 </Typography>
