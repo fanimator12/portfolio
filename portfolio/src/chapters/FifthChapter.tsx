@@ -22,7 +22,7 @@ function FifthChapter() {
                         padding: "60px"
                     }}
                 >
-                    Furthermore, I hold a great admiration for<br/>Ghibli Studio and japanese anime as an art form.
+                    Furthermore, I hold a great admiration for<br/>Japanese anime as an art form, especially for Studio Ghibli.
                 </Typography>
             </div>
         </ParallaxLayer>
