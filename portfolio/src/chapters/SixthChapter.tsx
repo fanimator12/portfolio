@@ -21,7 +21,7 @@ function SixthChapter() {
                     fontSize: { xs: "20px", md: "30px" },
                     textAlign: "center",
                     display: "inline-block",
-                    padding: "6",
+                    padding: "60px",
                 }}
             >
                 If you would like to learn more{" "}

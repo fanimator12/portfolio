@@ -11,6 +11,7 @@ function Mountains() {
       <Grid sx={{
         float: "left",
         height: "100%",
+        marginTop: { xs: "-2em", md: 0 },
         bottom: 0,
       }} >
         <Image src={mountains} />
