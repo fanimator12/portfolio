@@ -145,6 +145,7 @@ body::-webkit-scrollbar {
   display: inline-block;
   position: relative;
   color: #fff;
+  z-index: 6;
 }
 
 .hover-underline-animation:after {
@@ -158,6 +159,11 @@ body::-webkit-scrollbar {
   background-color: #fff;
   transform-origin: bottom right;
   transition: transform 0.5s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .intro-divider {
