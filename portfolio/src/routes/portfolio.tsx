@@ -70,7 +70,7 @@ function Portfolio() {
                           width: "auto",
                           border: "1px solid transparent",
                           textTransform: "none",
-                          fontSize: { xs: "40px", md: "50px" },
+                          fontSize: { xs: "35px", md: "50px" },
                           fontFamily: "ChakraPetch Bold",
                           transition: "0.5s",
                           borderRadius: "5px",

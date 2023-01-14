@@ -8,7 +8,7 @@ function OrionSpaceShuttle() {
             offset={1.9999}
             speed={2}
             style={{
-                zIndex: 50,
+                zIndex: 6,
             }}
         >
             <Grid sx={{

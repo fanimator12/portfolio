@@ -24,18 +24,21 @@ function ProjectItem({ project }: { project: Project }) {
                     height: { xs: "40rem", md: "30rem" },
                 }}
             >
+                <Grid sx={{
+                    height: { xs: "12em", md: "auto" },
+                    width: { xs: "12em", md: "auto" },
+                }}>
+                    <Image
+                        src={`../../${project.image}`}
+                        style={{
+                            transitionDuration: "500ms",
+                            animation:
+                                "1500ms cubic-bezier(0.7, 0, 0.6, 1) 0s 1 normal none running materialize",
+                            borderRadius: "10px",
+                        }}
+                    />
+                </Grid>
 
-                <Image
-                    src={`../../${project.image}`}
-                    style={{
-                        transitionDuration: "500ms",
-                        animation:
-                            "1500ms cubic-bezier(0.7, 0, 0.6, 1) 0s 1 normal none running materialize",
-                        height: "18em",
-                        width: "18em",
-                        borderRadius: "10px",
-                    }}
-                />
                 <Container
                     sx={{
                         width: { md: "80rem" },
@@ -48,7 +51,8 @@ function ProjectItem({ project }: { project: Project }) {
                     <Typography
                         color="#fff"
                         sx={{
-                            fontSize: { xs: "45px", md: "60px" },
+                            fontSize: { xs: "40px", md: "60px" },
+                            padding: { xs: "10px", md: 0 },
                             float: "right",
                             fontFamily: "ChakraPetch Bold"
                         }}
@@ -72,14 +76,14 @@ function ProjectItem({ project }: { project: Project }) {
                         <Typography
                             color="#fff"
                             sx={{
-                                fontSize: "20px",
+                                fontSize: { xs: "18", md: "20px" },
                                 fontFamily: "ChakraPetch Regular",
                             }}
                         >
                             <Typography
                                 color="#8a8a8a"
                                 sx={{
-                                    fontSize: "18px",
+                                    fontSize: { xs: "16", md: "18px" },
                                     fontFamily: "ChakraPetch Light",
                                 }}
                             >

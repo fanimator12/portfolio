@@ -97,7 +97,7 @@ function About() {
                           color="#fff"
                           sx={{
                             padding: "35px 0 0 0",
-                            fontSize: "70px",
+                            fontSize: { xs: "40px", md: "70px" },
                             float: "right",
                             fontFamily: "ChakraPetch Bold"
                           }}
@@ -136,17 +136,14 @@ function About() {
                           display="flex"
                           flexDirection="row"
                           alignItems="center"
-                          justifyContent="center"
-                          sx={{
-                            padding: "40px 5px 0",
-                          }}>
+                          justifyContent="center">
                           <Typography
                             color="#fff"
                             className="hover-underline-animation"
                             sx={{
-                              fontSize: "20px",
+                              fontSize: {xs:"15px",md:"20px"},
                               fontFamily: "ChakraPetch Regular",
-                              textAlign: "right"
+                              padding: { xs: "0 20px 0 20px", md: "10px" },
                             }}
                           >
                             <a style={{ color: "#fff", textDecoration: "none" }} href={`mailto:${about.email}`} target="_blank">
@@ -178,10 +175,10 @@ function About() {
                         padding: "2rem 0 0 1rem",
                       }}>
                       <Typography
-                        color="rgba(255, 255, 255, 0.1)"
                         sx={{
+                          color: { xs: "#fff", md: "rgba(255, 255, 255, 0.1)" },
                           textTransform: "uppercase",
-                          fontSize: "60px",
+                          fontSize: { xs: "40px", md: "60px" },
                           fontFamily: "ChakraPetch SemiBold",
                           transition: "0.5s",
                           "&:hover": {
@@ -209,10 +206,10 @@ function About() {
                         padding: "2rem 1rem 0 1rem",
                       }}>
                       <Typography
-                        color="rgba(255, 255, 255, 0.1)"
                         sx={{
+                          color: { xs: "#fff", md: "rgba(255, 255, 255, 0.1)" },
                           textTransform: "uppercase",
-                          fontSize: "60px",
+                          fontSize: { xs: "40px", md: "60px" },
                           fontFamily: "ChakraPetch SemiBold",
                           transition: "0.5s",
                           "&:hover": {

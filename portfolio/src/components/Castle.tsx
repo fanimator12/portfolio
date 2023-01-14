@@ -5,16 +5,15 @@ import castle_picture from "/castlebody.png";
 function Castle() {
   return (
     <ParallaxLayer
-      offset={9.2}
-      factor={5}
+      offset={8.6}
       speed={0.3}
       style={{
         backgroundColor: "transparent",
+        zIndex: 2
       }}
     >
       <Grid sx={{
-        paddingLeft: { sm: "2em", md: "5em", lg: "20em" },
-        marginTop: { xs: "-45em", md: "-45em", lg: "-45em", xl: "-2em" }
+        paddingLeft: { sm: "2em", md: "3em", lg: "20em" },
       }}>
         <img id="castle" src={castle_picture} />
       </Grid>

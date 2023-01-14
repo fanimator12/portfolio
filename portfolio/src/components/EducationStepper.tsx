@@ -1,4 +1,4 @@
-import { Box, Stepper, Step, StepLabel, Typography, StepContent, Button, Paper, List } from "@mui/material";
+import { Box, Stepper, Step, StepLabel, Typography, StepContent, Button, Paper, List, Grid } from "@mui/material";
 import { useState } from "react";
 import { getDetails } from "../data/about";
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
@@ -78,36 +78,36 @@ function EducationStepper() {
                 })
                 : ""}
 
-              <Box sx={{ mb: 2 }}>
-                <Box style={{ display: "flex", justifyContent: "space-between", flexDirection: "row", alignItems: "center" }}>
-                  <Box>
-                    <Button
-                      className="gradient-background"
-                      variant="contained"
-                      onClick={index === about[0].education.length - 1 ? handleReset : handleNext}
-                      sx={{ mt: 1, mr: 1, color: "#fff", fontWeight: "200" }}
-                    >
-                      {index === about[0].education.length - 1 ? 'Reset' : 'Show Me More'}
-                    </Button>
-                    <Button
-                      disabled={index === 0}
-                      onClick={handleBack}
-                      sx={{ mt: 1, mr: 1, color: "#fff" }}
-                    >
-                      {index === about[0].education.length - 1 ? '' : 'Back'}
-                    </Button>
-                  </Box>
+              <Grid container xs={12} style={{ display: "flex", justifyContent: "space-between", flexDirection: "row", alignItems: "center", marginBottom: 10 }}>
+                <Grid item>
+                  <Button
+                    className="gradient-background"
+                    variant="contained"
+                    onClick={index === about[0].education.length - 1 ? handleReset : handleNext}
+                    sx={{ mt: 1, mr: 1, color: "#fff", fontWeight: "200"}}
+                  >
+                    {index === about[0].education.length - 1 ? 'Reset' : 'Show Me More'}
+                  </Button>
+                  <Button
+                    disabled={index === 0}
+                    onClick={handleBack}
+                    sx={{ mt: 1, mr: 1, color: "#fff" }}
+                  >
+                    {index === about[0].education.length - 1 ? '' : 'Back'}
+                  </Button>
+                </Grid>
 
+                <Grid item>
                   <Typography
-                    color="#fff"
                     sx={{
+                      color: { xs: "rgba(255, 255, 255, 0.3)", md: "#fff" },
                       paddingTop: "8px",
                       fontSize: "14px",
                       fontFamily: "ChakraPetch Light",
                     }}
                   >{step.year}</Typography>
-                </Box>
-              </Box>
+                </Grid>
+              </Grid>
             </StepContent>
           </Step>
         ))}

@@ -52,34 +52,22 @@ body::-webkit-scrollbar {
   }
 }
 
-/* #shadow {
-  position: relative;
-  margin-top: 50em;
-  padding-top: 2em;
-  width: 300px;
-  height: 100px;
-  left: -60px;
-  margin-left: 250px;
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.233);
-  filter: blur(3rem);
-  animation: xAxis 4s infinite ease-in-out;
-}
-
-#shadow::after {
-  animation: yAxis 4s infinite ease-in-out;
-} */
-
-
 #castle {
   cursor: move;
   display: block;
-  width: 23em;
+  width: 30em;
+  padding-left: 2em;
   animation: xAxis 4s infinite ease-in-out;
 }
 
 #castle::after {
   animation: yAxis 4s infinite ease-in-out;
+}
+
+@media screen and (max-width:1024px) {
+  #castle {
+    width: 16em;
+  }
 }
 
 @keyframes move-twinkle-back {

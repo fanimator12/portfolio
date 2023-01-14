@@ -10,7 +10,7 @@ function SixthChapter() {
                 justifyContent: "center",
                 alignItems: "center",
                 flexDirection: "row",
-                zIndex: 6,
+                zIndex: 1
             }}>
             <Typography
                 className="title"
@@ -19,10 +19,9 @@ function SixthChapter() {
                     fontFamily: "Ghibli",
                     textTransform: "none",
                     fontSize: { xs: "20px", md: "30px" },
-                    textAlign: { md: "center", xl: "right" },
+                    textAlign: "center",
                     display: "inline-block",
-                    paddingBottom: "10em",
-                    paddingLeft: {sm:0, md:"2em",xl:"15em"}
+                    padding: "60px",
                 }}
             >
                 If you would like to learn more{" "}

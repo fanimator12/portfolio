@@ -8,14 +8,14 @@ function ScrollBackButton() {
             offset={9}
             speed={1}
             style={{
-                zIndex: 60
+                zIndex: 0
             }}
         >
-            <a href="/">
-                <Button sx={{ color: "#fff", position: "fixed", bottom: { xs: "120px", md: "60px" }, right: { xs: "30px", md: "50px" }, zIndex: "30" }}>
-                    <KeyboardDoubleArrowUpIcon sx={{ fontSize: "100px" }} />
+            {/* <a href="/">
+                <Button sx={{ color: "#fff", position: "fixed", bottom: { xs: "100px", sm: "60px" }, right: { xs: "30px", md: "50px" } }}>
+                    <KeyboardDoubleArrowUpIcon sx={{ fontSize: "100px", transition:"0.5s", "&:hover": {fontSize:"120px", transition:"0.5s"} }} />
                 </Button>
-            </a>
+            </a> */}
         </ParallaxLayer>
     );
 }

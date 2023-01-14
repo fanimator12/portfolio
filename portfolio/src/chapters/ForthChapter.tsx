@@ -10,7 +10,6 @@ function FirstChapter() {
         justifyContent: "center",
         textAlign: "center",
         alignItems: "center",
-        zIndex: 6,
       }}>
       <div>
         <Typography
