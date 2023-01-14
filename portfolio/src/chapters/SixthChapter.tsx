@@ -7,27 +7,29 @@ function SixthChapter() {
             speed={0.5}
             style={{
                 display: "flex",
-                justifyContent: "center",
-                textAlign: "center",
+                justifyContent: "flex-end",
                 alignItems: "center",
                 flexDirection: "row",
                 zIndex: 6,
+                marginTop:"-8em"
             }}>
                 <Typography
                     className="title"
-                    color="#fff"
+                    color="rgba(255, 255, 255, 0.3)"
                     sx={{
+                        float:"right",
+                        textAlign: "right",
                         fontFamily: "Ghibli",
-                        textTransform: "lowercase",
-                        fontSize: "50px",
-                        padding: "60px",
+                        textTransform: "none",
+                        fontSize: "32px",
+                        paddingRight:"16em",
                         display: "inline-block",
                     }}
                 >
-                    wanna know more?<br /> read{" "}
-                    <a className="hover-underline-animation2" href="/about" style={{ color: "#fff", textDecoration: "none", fontWeight:"600" }}>
+                    If you would like to learn more{" "}
+                    <a className="hover-underline-animation2" href="/about" style={{ color: "rgba(255, 255, 255, 0.8)", textDecoration: "none", fontWeight:"600" }}>
                         about
-                    </a>{" "}me!
+                    </a>{" "}me, <br />please feel free to read further.
                 </Typography>
         </ParallaxLayer>
     );

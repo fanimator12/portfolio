@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Divider, Typography } from "@mui/material";
 import { ParallaxLayer } from "@react-spring/parallax";
 import about from "../routes/about";
 function Introduction() {
@@ -22,12 +22,12 @@ function Introduction() {
             fontSize: "50px",
           }}
         >
-          Hi there, I'm Fanimator
+          fanimator
         </Typography>
-        <br></br>
+        <Divider className="intro-divider" />
         <Typography
-          className="title h1"
-          color="#fff"
+          className="title"
+          color="rgba(255, 255, 255, 0.2)"
           sx={{
             fontFamily: "Ghibli",
             textTransform: "lowercase",

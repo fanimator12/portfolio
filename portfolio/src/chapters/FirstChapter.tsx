@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Divider, Typography } from "@mui/material";
 import { ParallaxLayer } from "@react-spring/parallax";
 function FirstChapter() {
   return (
@@ -17,12 +17,12 @@ function FirstChapter() {
           color="#fff"
           sx={{
             fontFamily: "Ghibli",
-            textTransform: "lowercase",
+            textTransform: "none",
             fontSize: "50px",
             padding: "60px"
           }}
         >
-          let me show you around in my world
+          Let me show you around in my world.
         </Typography>
       </div>
     </ParallaxLayer>

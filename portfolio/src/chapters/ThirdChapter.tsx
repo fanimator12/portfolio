@@ -18,12 +18,12 @@ function SecondChapter() {
           color="#fff"
           sx={{
             fontFamily: "Ghibli",
-            textTransform: "lowercase",
-            fontSize: "50px",
+            textTransform: "none",
+            fontSize: "30px",
             padding:"60px"
           }}
         >
-          as well as engineering & technology
+          as well as engineering and technology.
         </Typography>
       </div>
 

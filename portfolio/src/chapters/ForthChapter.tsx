@@ -17,12 +17,12 @@ function FirstChapter() {
           color="#000"
           sx={{
             fontFamily: "Ghibli",
-            textTransform: "lowercase",
-            fontSize: "50px",
+            textTransform: "none",
+            fontSize: "30px",
             padding: "60px"
           }}
         >
-          I introduce you to my taste in photography too
+          Additionally, I am excited to share<br/>my unique perspective and style in photography with you. 
         </Typography>
       </div>
     </ParallaxLayer>

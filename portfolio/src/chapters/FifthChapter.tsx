@@ -17,12 +17,12 @@ function FifthChapter() {
                     color="#fff"
                     sx={{
                         fontFamily: "Ghibli",
-                        textTransform: "lowercase",
-                        fontSize: "50px",
+                        textTransform: "none",
+                        fontSize: "30px",
                         padding: "60px"
                     }}
                 >
-                    Lastly, I admire Ghibli Studio and anime in general
+                    Furthermore, I hold a great admiration for<br/>Ghibli Studio and japanese anime as an art form.
                 </Typography>
             </div>
         </ParallaxLayer>

@@ -17,12 +17,12 @@ function SecondChapter() {
           color="#fff"
           sx={{
             fontFamily: "Ghibli",
-            textTransform: "lowercase",
-            fontSize: "50px",
+            textTransform: "none",
+            fontSize: "30px",
             padding:"60px"
           }}
         >
-          as you can see, <br/> I'm a huge fan of science, physics and astronomy
+          I have a strong passion for<br/>science, physics, and astronomy,
         </Typography>
       </div>
 
