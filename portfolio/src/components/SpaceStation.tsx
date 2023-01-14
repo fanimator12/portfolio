@@ -6,6 +6,9 @@ function SpaceStation() {
         <ParallaxLayer
         offset={3}
         speed={2.5}
+        style={{
+            zIndex: 50
+        }}
     >
         <img src={spacestation}
             style={{
