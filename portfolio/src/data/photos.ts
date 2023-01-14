@@ -14,24 +14,24 @@ const photos = [
     title: 'Tivoli',
   },
   {
-    img: url + '35.JPG',
+    img: url + '35.jpg',
     title: 'Amsterdam Sunset',
   },
   {
-    img: url + '37.JPG',
+    img: url + '37.jpg',
     title: 'Male Portrait',
   },
 
   {
-    img: url + '17.JPG',
+    img: url + '17.jpg',
     title: 'Female Portrait',
   },
   {
-    img: url + '7.JPG',
+    img: url + '7.jpg',
     title: 'Ballet',
   },
   {
-    img: url + '32.JPG',
+    img: url + '32.jpg',
     title: 'Dress',
   },
   {
@@ -67,7 +67,7 @@ const photos = [
     title: 'Male Portrait',
   },
   {
-    img: url + '6.JPG',
+    img: url + '6.jpg',
     title: 'Female Portrait',
   },
   {
@@ -100,31 +100,31 @@ const photos = [
     title: 'Carousel in Tivoli',
   },
   {
-    img: url + '5.JPG',
+    img: url + '5.jpg',
     title: 'Male Portrait',
   },
   {
-    img: url + '38.JPG',
+    img: url + '38.jpg',
     title: 'Male Portrait',
   },
   {
-    img: url + '11.JPG',
+    img: url + '11.jpg',
     title: 'Male Portrait',
   },
   {
-    img: url + '10.JPG',
+    img: url + '10.jpg',
     title: 'Female Portrait',
   },
   {
-    img: url + '33.JPG',
+    img: url + '33.jpg',
     title: 'Female Portrait',
   },
   {
-    img: url + '36.JPG',
+    img: url + '36.jpg',
     title: 'Amsterdam',
   },
   {
-    img: url + '8.JPG',
+    img: url + '8.jpg',
     title: 'Female Portrait',
   },
   {
@@ -136,7 +136,7 @@ const photos = [
     title: 'Leaf in Botanical Garden Copenhagen',
   },
   {
-    img: url + '2.JPG',
+    img: url + '2.jpg',
     title: 'Selfportrait - Heterochromia',
   },
   {
@@ -148,7 +148,7 @@ const photos = [
     title: 'Male portrait',
   },
   {
-    img: url + '20.JPG',
+    img: url + '20.jpg',
     title: 'Clavicula',
   },
   {
@@ -167,7 +167,7 @@ const photos = [
 
 const selectedPhotos = [
   {
-    img: url + '44.JPG',
+    img: url + '44.jpg',
     title: 'Budapest National Museum',
   },
   {
@@ -183,7 +183,7 @@ const selectedPhotos = [
     title: 'Female Portrait',
   },
   {
-    img: url + '35.JPG',
+    img: url + '35.jpg',
     title: 'Amsterdam Sunset',
   },
   {
@@ -195,7 +195,7 @@ const selectedPhotos = [
     title: 'CERN Data Centre',
   },
   {
-    img: url + '28.JPG',
+    img: url + '28.jpg',
     title: 'Hug',
   },
   {
