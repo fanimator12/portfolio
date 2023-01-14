@@ -119,7 +119,7 @@ function About() {
                             color="rgba(255, 255, 255, 0.5)"
                             sx={{
                               textAlign: "center",
-                              fontSize: "20px",
+                              fontSize: {xs:"15px",md:"20px"},
                               fontFamily: "ChakraPetch Light",
                               padding: "20px",
                             }}
