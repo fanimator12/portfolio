@@ -1,17 +1,23 @@
 import galaxy1 from "/galaxy1.png";
+import Image from "mui-image";
 
 import { ParallaxLayer } from "@react-spring/parallax";
+import { Grid } from "@mui/material";
 function Galaxy1() {
     return (
         <ParallaxLayer
-            offset={0.3}
+            offset={0.5}
             speed={1}
         >
-            <img src={galaxy1}
-                style={{
+            <Grid sx={{
                     float: "right",
-                    width: "40em",
-                }} />
+                    width: {
+                        xs:"20em",
+                        sm:"40em",
+                    },
+                }} >
+                <Image src={galaxy1} />
+            </Grid>
         </ParallaxLayer>
     );
 }

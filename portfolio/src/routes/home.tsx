@@ -80,7 +80,6 @@ function Home() {
                     <Background />
                     <Galaxy1 />
                     <Webb1 />
-                    <Supernova />
                     <OrionSpaceShuttle />
                     <Introduction />
                     <Blackhole />
@@ -89,6 +88,7 @@ function Home() {
                     <Nebula />
                     <Galaxy2 />
                     <SecondChapter />
+                    <Supernova />
                     <JamesWebb />
                     <SpaceStation />
                     <ThirdChapter />

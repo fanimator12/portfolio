@@ -2,6 +2,7 @@ import { Container, ImageList, ImageListItem, LinearProgress, Typography } from 
 import { useEffect, useState } from "react";
 import { srcset } from "../components/srcset";
 import { getPhotos } from "../data/photos";
+import Image from "mui-image";
 
 function Photography() {
 
@@ -63,7 +64,7 @@ function Photography() {
                                 {photos.map((photo) => {
                                     return (
                                         <ImageListItem key={photo.img} cols={2}>
-                                            <img
+                                            <Image
                                                 {...srcset(photo.img, 250, 200, 2)}
                                                 alt={photo.title}
                                             />

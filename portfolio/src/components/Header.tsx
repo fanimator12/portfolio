@@ -33,7 +33,7 @@ function Header({ handleDrawerToggle, mobileOpen }: HeaderProps) {
                     transition: "none",
                     color: "transparent",
                     "& .MuiTypography-root": {
-                      fontSize: "20px",
+                      fontSize: "15px",
                       textTransform: "lowercase",
                       fontFamily: "ChakraPetch Regular"
                     },
@@ -52,7 +52,7 @@ function Header({ handleDrawerToggle, mobileOpen }: HeaderProps) {
             <Grid
               container
               justifyContent="flex-end"
-              sx={{ marginTop: "-55px" }}
+              sx={{ marginTop: "-49px" }}
             >
               <Grid item>
                 <Box>
@@ -95,7 +95,6 @@ function Header({ handleDrawerToggle, mobileOpen }: HeaderProps) {
                       transition: "none",
                       color: "transparent",
                       "& .MuiTypography-root": {
-                        fontSize: "40px",
                         textTransform: "lowercase",
                         fontFamily: "ChakraPetch Regular"
                       },

@@ -7,30 +7,29 @@ function SixthChapter() {
             speed={0.5}
             style={{
                 display: "flex",
-                justifyContent: "flex-end",
+                justifyContent: "center",
                 alignItems: "center",
                 flexDirection: "row",
                 zIndex: 6,
-                marginTop:"-8em"
             }}>
-                <Typography
-                    className="title"
-                    color="rgba(255, 255, 255, 0.3)"
-                    sx={{
-                        float:"right",
-                        textAlign: "right",
-                        fontFamily: "Ghibli",
-                        textTransform: "none",
-                        fontSize: "32px",
-                        paddingRight:"16em",
-                        display: "inline-block",
-                    }}
-                >
-                    If you would like to learn more{" "}
-                    <a className="hover-underline-animation2" href="/about" style={{ color: "#fff", textDecoration: "none", fontWeight:"600"}}>
-                        about
-                    </a>{" "}me, <br />please feel free to read further.
-                </Typography>
+            <Typography
+                className="title"
+                sx={{
+                    color: { xs: "rgba(255, 255, 255, 0.6)", md: "rgba(255, 255, 255, 0.3)" },
+                    fontFamily: "Ghibli",
+                    textTransform: "none",
+                    fontSize: { xs: "20px", md: "30px" },
+                    textAlign: { md: "center", xl: "right" },
+                    display: "inline-block",
+                    paddingBottom: "10em",
+                    paddingLeft: {sm:0, md:"2em",xl:"15em"}
+                }}
+            >
+                If you would like to learn more{" "}
+                <a className="hover-underline-animation2" href="/about" style={{ color: "#fff", textDecoration: "none", fontWeight: "600" }}>
+                    about
+                </a>{" "}me, <br />please feel free to read further.
+            </Typography>
         </ParallaxLayer>
     );
 }

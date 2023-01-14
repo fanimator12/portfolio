@@ -16,7 +16,7 @@ const NavLink = ({ url, title }: NavLinkProps) => {
               primary={<Typography style={{ 
                 marginTop: 0, 
                 paddingBottom: "5px",
-                fontSize: "20px", 
+                fontSize: "15px", 
                 fontFamily: "ChakraPetch Regular"}}>{title}</Typography>}
             />
           </a>

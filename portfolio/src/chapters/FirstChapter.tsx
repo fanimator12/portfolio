@@ -18,7 +18,7 @@ function FirstChapter() {
           sx={{
             fontFamily: "Ghibli",
             textTransform: "none",
-            fontSize: "50px",
+            fontSize: { xs: "20px", sm: "30px", md: "50px" },
             padding: "60px"
           }}
         >

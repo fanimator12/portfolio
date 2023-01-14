@@ -18,11 +18,11 @@ function SecondChapter() {
           sx={{
             fontFamily: "Ghibli",
             textTransform: "none",
-            fontSize: "30px",
-            padding:"60px"
+            fontSize: { xs: "20px", md: "30px" },
+            padding: "60px"
           }}
         >
-          I have a strong passion for<br/>science, physics, and astronomy,
+          I have a strong passion for<br />science, physics, and astronomy,
         </Typography>
       </div>
 

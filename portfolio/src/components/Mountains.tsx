@@ -1,19 +1,21 @@
+import Image from "mui-image";
+import { Grid } from "@mui/material";
 import { ParallaxLayer } from "@react-spring/parallax";
 import mountains from "/3.png";
 function Mountains() {
   return (
     <ParallaxLayer
-      offset={9.58}
+      offset={9}
       speed={1.8}
-      style={{
+    >
+      <Grid sx={{
         float: "left",
-        backgroundImage: `url(${mountains})`,
-        bottom: 0,
-        backgroundSize: "100%",
-        width: "80%",
         height: "100%",
-      }}
-    ></ParallaxLayer>
+        bottom: 0,
+      }} >
+        <Image src={mountains} />
+      </Grid>
+    </ParallaxLayer>
   );
 }
 export default Mountains;

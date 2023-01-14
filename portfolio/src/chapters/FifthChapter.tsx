@@ -18,7 +18,7 @@ function FifthChapter() {
                     sx={{
                         fontFamily: "Ghibli",
                         textTransform: "none",
-                        fontSize: "30px",
+                        fontSize: { xs: "20px", md: "30px" },
                         padding: "60px"
                     }}
                 >

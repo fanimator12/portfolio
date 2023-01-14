@@ -19,7 +19,10 @@ function Introduction() {
           sx={{
             fontFamily: "Ghibli",
             textTransform: "lowercase",
-            fontSize: "50px",
+            fontSize:{
+              xs:"30px",
+              md:"50px"
+            },
           }}
         >
           fanimator
@@ -27,11 +30,17 @@ function Introduction() {
         <Divider className="intro-divider" />
         <Typography
           className="title"
-          color="rgba(255, 255, 255, 0.2)"
           sx={{
+            color:{
+              xs:"rgba(255, 255, 255, 1)",
+              md:"rgba(255, 255, 255, 0.2)"
+            },
             fontFamily: "Ghibli",
             textTransform: "lowercase",
-            fontSize: "20px",
+            fontSize:{
+              xs:"15px",
+              md:"20px"
+            },
           }}
         >
           Software Engineer and Photographer

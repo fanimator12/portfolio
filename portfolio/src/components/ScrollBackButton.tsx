@@ -12,7 +12,7 @@ function ScrollBackButton() {
             }}
         >
             <a href="/">
-                <Button style={{ color: "#fff", position: "fixed", bottom: "60px", right: "50px", zIndex: "30" }}>
+                <Button sx={{ color: "#fff", position: "fixed", bottom: { xs: "120px", md: "60px" }, right: { xs: "30px", md: "50px" }, zIndex: "30" }}>
                     <KeyboardDoubleArrowUpIcon sx={{ fontSize: "100px" }} />
                 </Button>
             </a>

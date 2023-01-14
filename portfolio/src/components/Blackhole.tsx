@@ -1,5 +1,6 @@
 import blackhole from "/blackhole.png";
-
+import Image from "mui-image";
+import { Grid } from "@mui/material";
 import { ParallaxLayer } from "@react-spring/parallax";
 function Blackhole() {
     return (
@@ -7,14 +8,15 @@ function Blackhole() {
             offset={1}
             speed={1.5}
             style={{
-                display:"flex",
-                justifyContent:"center"
+                display: "flex",
+                justifyContent: "center"
             }}
         >
-            <img src={blackhole}
-                style={{
-                    width: "150em",
-                }} />
+            <Grid sx={{
+                width: "150em",
+            }} >
+                <Image src={blackhole} />
+            </Grid>
         </ParallaxLayer>
     );
 }

@@ -1,5 +1,6 @@
 import orionSpaceShuttle from "/orion-space-shuttle.png";
-
+import Image from "mui-image";
+import { Grid } from "@mui/material";
 import { ParallaxLayer } from "@react-spring/parallax";
 function OrionSpaceShuttle() {
     return (
@@ -8,15 +9,16 @@ function OrionSpaceShuttle() {
             speed={2}
             style={{
                 zIndex: 50,
-                paddingTop:"60em",
             }}
         >
-            <img src={orionSpaceShuttle}
-                style={{
-                    float:"right",
-                    paddingRight:"40em",
-                    width: "22em",
-                }} />
+            <Grid sx={{
+                float: "right",
+                width: { xs: "25em", md: "22em" },
+                paddingRight: { xs: "10em", md: "40em" },
+                paddingTop: { xs: "35em", md: "60em" },
+            }} >
+                <Image src={orionSpaceShuttle} />
+            </Grid>
         </ParallaxLayer>
     );
 }

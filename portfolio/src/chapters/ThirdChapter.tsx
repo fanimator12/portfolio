@@ -10,7 +10,7 @@ function SecondChapter() {
         justifyContent: "center",
         textAlign: "center",
         alignItems: "center",
-        marginTop:"20em"
+        marginTop: "20em"
       }}>
       <div>
         <Typography
@@ -19,8 +19,8 @@ function SecondChapter() {
           sx={{
             fontFamily: "Ghibli",
             textTransform: "none",
-            fontSize: "30px",
-            padding:"60px"
+            fontSize: { xs: "20px", md: "30px" },
+            padding: "60px"
           }}
         >
           as well as engineering and technology.
