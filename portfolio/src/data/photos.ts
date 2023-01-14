@@ -175,11 +175,11 @@ const selectedPhotos = [
     title: 'Wheat in Botanical Garden Copenhagen',
   },
   {
-    img: url + '32.JPG',
+    img: url + '32.jpg',
     title: 'Dress',
   },
   {
-    img: url + '6.JPG',
+    img: url + '6.jpg',
     title: 'Female Portrait',
   },
   {
@@ -199,7 +199,7 @@ const selectedPhotos = [
     title: 'Hug',
   },
   {
-    img: url + '20.JPG',
+    img: url + '20.jpg',
     title: 'Clavicula',
   }
 ];
