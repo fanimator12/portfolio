@@ -128,7 +128,7 @@ const photos = [
     title: 'Female Portrait',
   },
   {
-    img: url + '28.JPG',
+    img: url + '28.jpg',
     title: 'Hug',
   },
   {
