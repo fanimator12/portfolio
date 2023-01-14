@@ -13,7 +13,7 @@ function Nebula() {
             }}
         >
             <Grid sx={{
-                width: "auto",
+                width: { xs: "12em", md: "30em" },
                 paddingRight: { xs: "1em", md: "10em" },
                 paddingTop: { xs: 0, md: "10em" },
                 height: { xs: "12em", md: "30em" },
