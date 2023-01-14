@@ -1,4 +1,4 @@
-import nebula from "../../public/nebula.png";
+import nebula from "/nebula.png";
 
 import { ParallaxLayer } from "@react-spring/parallax";
 function Nebula() {

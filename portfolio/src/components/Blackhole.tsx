@@ -1,4 +1,4 @@
-import blackhole from "../../public/blackhole.png";
+import blackhole from "/blackhole.png";
 
 import { ParallaxLayer } from "@react-spring/parallax";
 function Blackhole() {

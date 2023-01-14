@@ -1,4 +1,4 @@
-const url = "public/"
+const url = "/"
 
 const projects = [
     {

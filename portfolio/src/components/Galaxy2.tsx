@@ -1,4 +1,4 @@
-import galaxy2 from "../../public/galaxy2.png";
+import galaxy2 from "/galaxy2.png";
 
 import { ParallaxLayer } from "@react-spring/parallax";
 function Galaxy2() {

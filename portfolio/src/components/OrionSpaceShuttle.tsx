@@ -1,4 +1,4 @@
-import orionSpaceShuttle from "../../public/orion-space-shuttle.png";
+import orionSpaceShuttle from "/orion-space-shuttle.png";
 
 import { ParallaxLayer } from "@react-spring/parallax";
 function OrionSpaceShuttle() {

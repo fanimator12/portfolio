@@ -1,5 +1,5 @@
 import { ParallaxLayer } from "@react-spring/parallax";
-import sky from "../../public/0.png";
+import sky from "/0.png";
 function Background() {
   return (
     <ParallaxLayer

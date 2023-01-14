@@ -1,4 +1,4 @@
-import jamesWebb from "../../public/james-webb.png";
+import jamesWebb from "/james-webb.png";
 
 import { ParallaxLayer } from "@react-spring/parallax";
 function JamesWebb() {

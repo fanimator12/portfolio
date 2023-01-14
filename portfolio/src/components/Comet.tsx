@@ -1,4 +1,4 @@
-import comet from "../../public/comet.png";
+import comet from "/comet.png";
 
 import { ParallaxLayer } from "@react-spring/parallax";
 function Comet() {
