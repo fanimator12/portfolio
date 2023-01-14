@@ -84,7 +84,7 @@ function EducationStepper() {
                     className="gradient-background"
                     variant="contained"
                     onClick={index === about[0].education.length - 1 ? handleReset : handleNext}
-                    sx={{ mt: 1, mr: 1, color: "#fff", fontWeight: "200"}}
+                    sx={{ mt: 1, mr: 1, color: "#fff", fontWeight: {xs:"500",md:"200"}}}
                   >
                     {index === about[0].education.length - 1 ? 'Reset' : 'Show Me More'}
                   </Button>
