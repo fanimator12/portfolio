@@ -15,7 +15,7 @@ function PhotoCarousel() {
                 alignItems: "center"
             }}
         >
-            <Carousel animation="slide" indicators={false} duration={1600} height="40em" sx={{ width: "70em" }}>
+            <Carousel animation="slide" swipe={false} indicators={false} duration={1600} height="40em" sx={{ width: "70em" }}>
                 {
                     photos.map((item, i) =>
                         <>
