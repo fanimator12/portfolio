@@ -34,7 +34,7 @@ const about = [
         skills: []
       }
     ],
-    biography: "I am Franciska, a multi-disciplinary professional with expertise in software engineering, photography, and graphic design. I am Hungarian, originally from Romania and have a strong foundation in science and art, which I strive to integrate in my work. I am currently completing my studies in Denmark and am eager to take on new opportunities. If you have a project in mind that aligns with my skill set and interests, please do not hesitate to contact me via email:",
+    biography: "I am a multidisciplinary software engineer and photographer with a strong desire to learn and advance my skills in cutting-edge technologies. I specialize in web application development for mobile and desktop platforms, and have experience working with a wide range of technologies including React, Typescript, C# and Python. I have a proven track record of successfully delivering quality work. I am currently completing my Bachelor's degree in Software Technology at VIA University College in Denmark. As a native Hungarian from Romania, I also possess proficiency in English. I am also in the process of expanding my language skills by studying French and Portuguese. If you have a project that aligns with my skill set and interests, please do not hesitate to contact me at: ",
     email: "torok.franciska.leonora@gmail.com",
     skills: [
       "React",

@@ -1,4 +1,4 @@
-import { Button, Container, Grid, LinearProgress, Typography } from "@mui/material";
+import { Button, Container, Divider, Grid, LinearProgress, Typography } from "@mui/material";
 import Image from "mui-image";
 import { useEffect, useState } from "react";
 import { getDetails } from "../data/about";
@@ -96,7 +96,7 @@ function About() {
                         <Typography
                           color="#fff"
                           sx={{
-                            padding: "35px 0 35px 0",
+                            padding: "35px 0 0 0",
                             fontSize: "70px",
                             float: "right",
                             fontFamily: "ChakraPetch Bold"
@@ -106,21 +106,22 @@ function About() {
                         </Typography>
                       </Grid>
 
+                      <Divider className="intro-divider" />
+
                       {about.biography !== null ? (
                         <Grid
                           display="flex"
                           flexDirection="row"
                           alignItems="center"
                           justifyContent="space-between"
-                          sx={{
-                            padding: "5px",
-                          }}
                         >
                           <Typography
-                            color="#fff"
+                            color="rgba(255, 255, 255, 0.5)"
                             sx={{
+                              textAlign: "center",
                               fontSize: "20px",
-                              fontFamily: "ChakraPetch Light"
+                              fontFamily: "ChakraPetch Light",
+                              padding: "20px",
                             }}
                           >
                             {about.biography}
@@ -177,10 +178,16 @@ function About() {
                         padding: "2rem 0 0 1rem",
                       }}>
                       <Typography
-                        color="#fff"
+                        color="rgba(255, 255, 255, 0.1)"
                         sx={{
-                          fontSize: "30px",
-                          fontFamily: "ChakraPetch Regular",
+                          textTransform: "uppercase",
+                          fontSize: "60px",
+                          fontFamily: "ChakraPetch SemiBold",
+                          transition: "0.5s",
+                          "&:hover": {
+                            color: "#fff",
+                            transition: "0.5s",
+                          },
                         }}
                       >
                         Education
@@ -188,7 +195,7 @@ function About() {
                     </Grid>
 
                     <Grid
-                      sx={{ padding: "40px 5px 0" }}
+                      sx={{ padding: "0 0 1rem 0" }}
                     >
                       <EducationStepper />
                     </Grid>
@@ -197,15 +204,21 @@ function About() {
                       display="flex"
                       flexDirection="row"
                       alignItems="center"
-                      justifyContent="flex-start"
+                      justifyContent="flex-end"
                       sx={{
-                        padding: "2rem 0 0 1rem",
+                        padding: "2rem 1rem 0 1rem",
                       }}>
                       <Typography
-                        color="#fff"
+                        color="rgba(255, 255, 255, 0.1)"
                         sx={{
-                          fontSize: "30px",
-                          fontFamily: "ChakraPetch Regular",
+                          textTransform: "uppercase",
+                          fontSize: "60px",
+                          fontFamily: "ChakraPetch SemiBold",
+                          transition: "0.5s",
+                          "&:hover": {
+                            color: "#fff",
+                            transition: "0.5s",
+                          },
                         }}
                       >
                         Skill set
@@ -213,7 +226,7 @@ function About() {
                     </Grid>
 
                     <Grid
-                      sx={{ padding: "20px 5px 0", zIndex: 5 }}
+                      sx={{ zIndex: 5, border: "1px solid rgba(255, 255, 255, 0.1)", borderRadius: "6px", padding: "12px" }}
                       display="grid"
                       gridTemplateColumns={{
                         xs: "repeat(2, 1fr)",
