@@ -12,6 +12,7 @@ function Footer() {
             <Typography
                 color="#7a7a7a"
                 sx={{
+                    margin: "auto",
                     float: "right",
                     fontSize: "12px",
                     fontFamily: "ChakraPetch Light",
