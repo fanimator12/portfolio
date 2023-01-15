@@ -21,7 +21,7 @@ function ProjectItem({ project }: { project: Project }) {
                     justifyContent: "center",
                     alignItems: "center",
                     flexDirection: { xs: "column", md: "row" },
-                    height: { xs: "40rem", md: "30rem" },
+                    height: { xs: "100%", md: "25em" },
                 }}
             >
                 <Grid sx={{
@@ -105,20 +105,25 @@ function ProjectItem({ project }: { project: Project }) {
                 >
                     {project.description}
 
-                    <a href={project.url} target="_blank"
-                        style={{
-                            display: "flex",
-                            justifyContent: "center",
-                            textDecoration: "none",
-                            color: "#fff",
-                            paddingLeft: "5px",
-                            fontFamily: "ChakraPetch SemiBold",
-                            textAlign: "center"
-                        }}
-                    >
-                        <br></br>
-                        {project.url}
-                    </a>
+                    <Grid sx={{
+                        padding: { xs: 0, md: "1em" },
+                        fontSize: "25px",
+                    }}>
+                        <a href={project.url} target="_blank"
+                            style={{
+                                display: "flex",
+                                justifyContent: "center",
+                                textDecoration: "none",
+                                color: "#fff",
+                                fontFamily: "ChakraPetch SemiBold",
+                                textAlign: "center",
+                            }}
+                        >
+                            <br></br>
+                            {project.url}
+                        </a>
+                    </Grid>
+
                 </Typography>
             </Container>
         </>
@@ -180,8 +185,7 @@ function ProjectPage() {
                 <Container
                     sx={{
                         display: { xs: "block" },
-                        paddingTop: "6em",
-                        height: "auto",
+                        paddingTop: "5em",
                         paddingBottom: "5em"
                     }}
                 >

@@ -2,11 +2,11 @@ import { LinearProgress } from "@mui/material";
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "../components/ScrollToTop";
+import ProjectPage from "../routes/projectPage";
 const About = lazy(() => import("../routes/about"));
 const Home = lazy(() => import("../routes/home"));
 const Photography = lazy(() => import("../routes/photography"));
 const Portfolio = lazy(() => import("../routes/portfolio"));
-const ProjectPage = lazy(() => import("../routes/projectPage"));
 const Services = lazy(() => import("../routes/services"));
 const Software = lazy(() => import("../routes/software"));
 
