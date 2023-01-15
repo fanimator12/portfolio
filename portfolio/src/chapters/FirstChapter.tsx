@@ -3,7 +3,7 @@ import { ParallaxLayer } from "@react-spring/parallax";
 function FirstChapter() {
   return (
     <ParallaxLayer
-      offset={0.999999}
+      offset={0.9}
       speed={0.5}
       style={{
         display: "flex",

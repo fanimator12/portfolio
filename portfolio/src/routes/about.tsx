@@ -119,7 +119,7 @@ function About() {
                             color="rgba(255, 255, 255, 0.5)"
                             sx={{
                               textAlign: "center",
-                              fontSize: {xs:"15px",md:"20px"},
+                              fontSize: { xs: "15px", md: "20px" },
                               fontFamily: "ChakraPetch Light",
                               padding: "20px",
                             }}
@@ -139,14 +139,13 @@ function About() {
                           justifyContent="center">
                           <Typography
                             color="#fff"
-                            className="hover-underline-animation"
                             sx={{
-                              fontSize: {xs:"15px",md:"20px"},
+                              fontSize: { xs: "15px", md: "20px" },
                               fontFamily: "ChakraPetch Regular",
                               padding: { xs: "0 20px 0 20px", md: "10px" },
                             }}
                           >
-                            <a style={{ color: "#fff", textDecoration: "none" }} href={`mailto:${about.email}`} target="_blank">
+                            <a className="hover-underline-animation" style={{ color: "#fff", textDecoration: "none" }} href={`mailto:${about.email}`} target="_blank">
                               {about.email}
                             </a>
                           </Typography>

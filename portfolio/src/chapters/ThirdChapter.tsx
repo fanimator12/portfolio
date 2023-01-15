@@ -26,7 +26,6 @@ function SecondChapter() {
           as well as engineering and technology.
         </Typography>
       </div>
-
     </ParallaxLayer>
   );
 }

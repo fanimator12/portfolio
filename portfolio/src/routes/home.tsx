@@ -26,6 +26,7 @@ import ThirdChapter from "../chapters/ThirdChapter";
 import ForthChapter from "../chapters/ForthChapter";
 import FifthChapter from "../chapters/FifthChapter";
 import SixthChapter from "../chapters/SixthChapter";
+import LanguagesChapter from "../chapters/LanguagesChapter";
 
 function Home() {
 
@@ -43,7 +44,7 @@ function Home() {
 
     useEffect(() => {
         initLoad();
-        document.title = "home | fanimator";
+        document.title = "fanimator";
     });
 
     return (
@@ -88,6 +89,7 @@ function Home() {
                     <Nebula />
                     <Galaxy2 />
                     <SecondChapter />
+                    <LanguagesChapter />
                     <Supernova />
                     <JamesWebb />
                     <SpaceStation />
