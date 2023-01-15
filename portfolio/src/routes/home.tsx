@@ -27,6 +27,7 @@ import ForthChapter from "../chapters/ForthChapter";
 import FifthChapter from "../chapters/FifthChapter";
 import SixthChapter from "../chapters/SixthChapter";
 import LanguagesChapter from "../chapters/LanguagesChapter";
+import ScrollDownIcon from "../components/ScrollDownIcon";
 
 function Home() {
 
@@ -71,13 +72,7 @@ function Home() {
             ) : (
                 <Parallax pages={10} className="parallax">
                     <DeepSpace />
-                    <Container
-                        sx={{
-                            display: { xs: "block" },
-                            padding: "20px",
-                        }}
-                    >
-                    </Container>
+                    <ScrollDownIcon />
                     <Background />
                     <Galaxy1 />
                     <Webb1 />
