@@ -4,7 +4,7 @@ function LanguagesChapter() {
     return (
         <>
             <ParallaxLayer
-                offset={4}
+                offset={3.9}
                 speed={0.5}
                 style={{
                     display: "flex",
@@ -30,7 +30,7 @@ function LanguagesChapter() {
             </ParallaxLayer>
 
             <ParallaxLayer
-                offset={5}
+                offset={4.9}
                 speed={0.5}
                 style={{
                     display: "flex",
@@ -50,7 +50,7 @@ function LanguagesChapter() {
                             padding: "60px"
                         }}
                     >
-                        What's more,<br/>I also have a background in studying French and Danish,
+                        What's more,<br />I also have a background in studying French and Danish,
                     </Typography>
                 </div>
             </ParallaxLayer>
