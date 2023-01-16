@@ -9,20 +9,6 @@ function Services() {
   const services = getServices();
   const about = getDetails();
 
-  const listServices = services[0].examples.map((service) =>
-    <Typography
-      color="#fff"
-      sx={{
-        fontSize: "20px",
-        float: "right",
-        fontFamily: "ChakraPetch Light",
-      }}
-      key={service}
-    >
-      {service}
-    </Typography>
-  );
-
   function componentDidMount() {
     setTimeout(function () {
       setLoading(false)
@@ -127,7 +113,20 @@ function Services() {
                         alignItems="flex-start"
                         key={index}
                       >
-                        {listServices}
+                        <Typography
+                          color="#fff"
+                          sx={{
+                            fontSize: "20px",
+                            float: "right",
+                            fontFamily: "ChakraPetch Light",
+                          }}
+                        >
+                          <ul style={{ padding: 0, listStyleType: "none" }}>
+                            {service.examples.map((example, i) => (
+                              <li key={i}>{example}</li>
+                            ))}
+                          </ul>
+                        </Typography>
                       </Grid>
                     </>
                   )}
