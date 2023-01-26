@@ -72,64 +72,80 @@ function Services() {
                     zIndex: 50
                   }}
                 >
-
-
                   <Container
                     sx={{
                       display: "flex",
                       flexDirection: "column",
                       justifyContent: "space-between"
                     }}
-                  > {services.map((service, index) =>
-                    <>
-                      <Grid
-                        display="flex"
-                        justifyContent="flex-start"
-                        flexDirection="row"
-                        alignItems="center"
+                  >
+                    <Grid
+                      display="flex"
+                      justifyContent="flex-start"
+                      flexDirection="row"
+                      alignItems="center"
+                    >
+                      <Typography
+                        color="#4a4a4a"
+                        sx={{
+                          fontSize: "20px",
+                          float: "right",
+                          fontFamily: "ChakraPetch Regular",
+                        }}
                       >
-                        <Typography
-                          color="#fff"
-                          sx={{
-                            padding: "20px 0 10px 0",
-                            fontSize: "40px",
-                            float: "right",
-                            fontFamily: "ChakraPetch SemiBold",
-                            transition: "all 0.5s",
-                            "&:hover": {
-                              fontSize: "45px",
+                        If you need me, I can do ...
+                      </Typography>
+                    </Grid>
+                    {services.map((service, index) =>
+                      <>
+                        <Grid
+                          display="flex"
+                          justifyContent="flex-start"
+                          flexDirection="row"
+                          alignItems="center"
+                        >
+                          <Typography
+                            color="#fff"
+                            sx={{
+                              padding: "20px 0 0 0",
+                              fontSize: "40px",
+                              float: "right",
+                              fontFamily: "ChakraPetch SemiBold",
                               transition: "all 0.5s",
-                            },
-                          }}
-                        >
-                          {service.title}
-                        </Typography>
-                      </Grid>
+                              "&:hover": {
+                                fontSize: "45px",
+                                transition: "all 0.5s",
+                              },
+                            }}
+                          >
+                            {service.title}
+                          </Typography>
+                        </Grid>
 
-                      <Grid
-                        display="flex"
-                        justifyContent="flex-start"
-                        flexDirection="column"
-                        alignItems="flex-start"
-                        key={index}
-                      >
-                        <Typography
-                          color="#fff"
-                          sx={{
-                            fontSize: "20px",
-                            float: "right",
-                            fontFamily: "ChakraPetch Light",
-                          }}
+                        <Grid
+                          display="flex"
+                          justifyContent="flex-start"
+                          flexDirection="column"
+                          alignItems="flex-start"
+                          key={index}
                         >
-                          <ul style={{ padding: 0, listStyleType: "none" }}>
-                            {service.examples.map((example, i) => (
-                              <li key={i}>{example}</li>
-                            ))}
-                          </ul>
-                        </Typography>
-                      </Grid>
-                    </>
-                  )}
+                          <Typography
+                            color="#fff"
+                            sx={{
+                              fontSize: "20px",
+                              float: "right",
+                              fontFamily: "ChakraPetch Light",
+                            }}
+                          >
+                            <ul style={{ padding: 0, listStyleType: "none" }}>
+                              {service.examples.map((example, i) => (
+                                <li key={i}>{example}</li>
+                              ))}
+                            </ul>
+                          </Typography>
+                        </Grid>
+                      </>
+                    )}
                   </Container>
 
                   <Container sx={{ width: { md: "40rem" } }}>
