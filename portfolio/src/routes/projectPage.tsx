@@ -1,4 +1,4 @@
-import { Button, Container, Grid, LinearProgress, Typography } from "@mui/material";
+import { Button, CardMedia, Container, Grid, LinearProgress, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import Image from "mui-image";
 import { getProject } from "../data/projects";
@@ -28,13 +28,24 @@ function ProjectItem({ project }: { project: Project }) {
                     height: { xs: "12em", md: "auto" },
                     width: { xs: "12em", md: "auto" },
                 }}>
-                    <Image
+                    <CardMedia
+                        component="img"
                         src={`../../${project.image}`}
-                        style={{
+                        sx={{
+                            borderRadius: "10px",
+                            transition: "0.5s",
+                            objectFit: "cover",
+                            objectPosition: "center",
+                            height: "15em",
+                            width: "15em",
+                            "&:hover": {
+                                transform: "scale(1.05)",
+                                transition: "all 0.5s",
+                            },
                             transitionDuration: "500ms",
                             animation:
                                 "1500ms cubic-bezier(0.7, 0, 0.6, 1) 0s 1 normal none running materialize",
-                            borderRadius: "10px",
+
                         }}
                     />
                 </Grid>
