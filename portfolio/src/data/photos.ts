@@ -38,12 +38,12 @@ const photos: Photo[] = [
     orientation: "horizontal",
   },
   {
-    img: url + "56.JPG",
+    img: url + "56.jpg",
     title: "Female Portrait",
     orientation: "horizontal",
   },
   {
-    img: url + "50.JPG",
+    img: url + "50.jpg",
     title: "Female Portrait",
     orientation: "horizontal",
   },
