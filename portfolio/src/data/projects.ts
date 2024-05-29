@@ -3,6 +3,24 @@ const url = "/"
 const projects = [
     {
         id: 1,
+        image: url + "nullcarbon.png",
+        title: "Nullcarbon",
+        type: "webapp",
+        url: "https://app.nullcarbon.dk/sign-in",
+        description: "As a student worker, then full-time frontend developer, helped the danish startup company Nullcarbon to establish their product for generating Life Cycle Assessment (LCA) reports for buildings and constructions.",
+        technologies: "ReactJS, Typescript, Material UI, Django",
+    },
+    {
+        id: 2,
+        image: url + "passmaster.png",
+        title: "PassMaster",
+        type: "website",
+        url: "https://github.com/fanimator12/passmaster/",
+        description: "This password manager was implemented for the elective SCP1 - IT Security and Cryptography in Practice course (VIA University College). The project is built mainly on Advanced Encryption Standard (AES) encryption.",
+        technologies: "ReactJS, Typescript, Material UI, Python, Fast API, Kubernetes, Docker, JWT, TOTP",
+    },
+    {
+        id: 3,
         image: url + "academictraining.svg",
         title: "CERN Academic Training",
         type: "website",
@@ -11,7 +29,7 @@ const projects = [
         technologies: "ReactJS, Typescript, Ant Design, Python, Kubernetes, Django",
     },
     {
-        id: 2,
+        id: 4,
         image: url + "bestmovies.png",
         title: "BestMovies",
         type: "website",
@@ -20,7 +38,7 @@ const projects = [
         technologies: "ReactJS, Typescript, Material UI, .NET, C#, REST API, Azure DevOps, Vercel",
     },
     {
-        id: 3,
+        id: 5,
         image: url + "bucketlist.svg",
         title: "My Bucket List",
         type: "mobile app",
@@ -29,7 +47,7 @@ const projects = [
         technologies: "Android, Java",
     },
     {
-        id: 4,
+        id: 6,
         image: url + "smartfarm.png",
         title: "SmartFarm",
         type: "mobile app",
@@ -38,7 +56,7 @@ const projects = [
         technologies: "Android, C, Java, Docker, Microsoft Azure, SQL, PowerBI, WebSockets",
     },
     {
-        id: 5,
+        id: 7,
         image: url + "artwebshop.png",
         title: "Art Web Shop",
         type: "website",
@@ -47,7 +65,7 @@ const projects = [
         technologies: "C#, .NET, Java, SQL",
     },
     {
-        id: 6,
+        id: 8,
         image: url + "vikarservice.png",
         title: "Online Vikar Service",
         type: "app",

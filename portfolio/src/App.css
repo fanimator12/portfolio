@@ -38,6 +38,15 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
 @keyframes xAxis {
   50% {
     animation-timing-function: ease-in-out;
@@ -79,7 +88,7 @@ body::-webkit-scrollbar {
 }
 
 #scrolldown {
-  margin-top:5em;
+  margin-top: 5em;
   cursor: move;
   display: block;
   animation: xAxis2 2s infinite ease-in-out;
@@ -285,6 +294,7 @@ body::-webkit-scrollbar {
   /* fallback for old browsers */
   background: -webkit-linear-gradient(160deg, #00c3ff, #630036);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 

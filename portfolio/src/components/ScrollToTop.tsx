@@ -1,19 +1,67 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
- 
-function ScrollToTop({children}: any) {
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import { Button } from "@mui/material";
+
+function ScrollToTop({ children }: any) {
   const { pathname } = useLocation();
- 
+  const [showButton, setShowButton] = useState(false);
+
   useEffect(() => {
-    if (pathname != "/" ) 
-    // window.scrollTo(0, 0);
     window.scrollTo({
-          top: 1000,
-          behavior: 'smooth'
-        });
+      top: 0,
+      behavior: "smooth",
+    });
   }, [pathname]);
 
-  return children;
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  return (
+    <>
+      {children}
+      {showButton && <Button
+        onClick={scrollToTop}
+        className={`back-to-top ${showButton ? "visible" : ""}`}
+        sx={{
+          backgroundColor: "transparent",
+          color: "white",
+          cursor: "pointer",
+          padding: "15px",
+          borderRadius: "10px",
+          fontSize: "18px",
+          display: "block",
+          position: "fixed",
+          bottom: "3em",
+          right: "3em",
+          zIndex: 99,
+          "&:hover": {
+            backgroundColor: "#ffffff10",
+          },
+        }}
+      >
+        <ArrowUpwardIcon />
+      </Button>
 }
- 
+    </>
+  );
+}
+
 export default ScrollToTop;

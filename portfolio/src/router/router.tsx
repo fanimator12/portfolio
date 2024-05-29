@@ -1,5 +1,4 @@
-import { LinearProgress } from "@mui/material";
-import { lazy, Suspense } from "react";
+import { lazy } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "../components/ScrollToTop";
 import ProjectPage from "../routes/projectPage";
@@ -20,7 +19,10 @@ const AppRouter = () => {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/services" element={<Services />} />
           <Route path="/software-projects" element={<Software />} />
-          <Route path="/software-projects/:projectId" element={<ProjectPage />} />
+          <Route
+            path="/software-projects/:projectId"
+            element={<ProjectPage />}
+          />
           <Route path="/photography" element={<Photography />} />
           <Route
             path="*"
@@ -39,7 +41,9 @@ const AppRouter = () => {
                   alignItems: "center",
                   color: "#fff",
                 }}
-              >Oops! <br></br> There's nothing here.</main>
+              >
+                Oops! <br></br> There's nothing here.
+              </main>
             }
           />
         </Routes>

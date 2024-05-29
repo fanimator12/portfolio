@@ -11,11 +11,15 @@ const about = [
         skills: [
           "Full Scholarship - SU (Statens Uddannelsesstøtte)",
           "OOP, Software Engineering",
-          "Advanced Mathematics (Linear Algebra, Calculus)",
+          "Advanced Mathematics (Applied Linear Algebra, Stochastis Modelling and Processing, Calculus)",
           "Algorithms and Data Structures",
-          "Machine Learning",
+          "Data Analytics Infrastructure",
+          "Database Systems",
+          "Networking and Security",
           "Responsive Web Design",
           "Android Development",
+          "Machine Learning",
+          "IT Security and Cryptography in Practice"
         ]
       },
       {
@@ -35,9 +39,9 @@ const about = [
       }
     ],
     biography: "I am a multidisciplinary software engineer and photographer with a strong desire to learn and advance my skills in cutting-edge technologies. I specialize in web application development for mobile and desktop platforms, and have experience working with a wide range of technologies including React, Typescript, C# and Python. I have a proven track record of successfully delivering quality work. I am currently completing my Bachelor's degree in Software Technology at VIA University College in Denmark. As a native Hungarian from Romania, I also possess proficiency in English. I am also in the process of expanding my language skills by studying French and Danish. If you have a project that aligns with my skill set and interests, please do not hesitate to contact me at: ",
-    email: "torok.franciska.leonora@gmail.com",
+    email: "franciska-leonora.torok@cern.ch",
     skills: [
-      "React",
+      "ReactJS",
       "Typescript",
       "HTML & CSS",
       "Git",
