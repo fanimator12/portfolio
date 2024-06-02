@@ -188,7 +188,7 @@ const photos: Photo[] = [
     orientation: "horizontal",
   },
   {
-    img: url + "49.JPG",
+    img: url + "49.jpg",
     title: "Female Portrait",
     orientation: "vertical",
   },
@@ -301,7 +301,7 @@ const selectedPhotos = [
     orientation: "vertical",
   },
   {
-    img: url + "54.JPG",
+    img: url + "54.jpg",
     title: "Selfportrait",
     orientation: "horizontal",
   },
