@@ -132,7 +132,6 @@ function Photography() {
                     ref={(el) => (imageRefs.current[index] = el)}
                     {...srcset(photo.img, 250, 200, rows, cols)}
                     alt={photo.title}
-                    loading="lazy"
                     style={photoStyles}
                     className="fade-in"
                   />
