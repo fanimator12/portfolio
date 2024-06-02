@@ -1,6 +1,6 @@
 const about = [
   {
-    name: 'Franciska Török',
+    name: "Franciska Török",
     profile: "/profile.JPG",
     age: new Date().getFullYear() - 2000,
     education: [
@@ -19,8 +19,8 @@ const about = [
           "Responsive Web Design",
           "Android Development",
           "Machine Learning",
-          "IT Security and Cryptography in Practice"
-        ]
+          "IT Security and Cryptography in Practice",
+        ],
       },
       {
         school: `"Márton Áron" National College, Romania`,
@@ -28,17 +28,18 @@ const about = [
         year: "2016-2019 (3 years)",
         skills: [
           "Staff member of the Student Council",
-          "Advanced Biology, Chemistry, Physics and Mathematics"
-        ]
+          "Advanced Biology, Chemistry, Physics and Mathematics",
+        ],
       },
       {
         school: `"Nagy István" Art School, Romania`,
         degree: "High School Education focused on Art & Music",
         year: "2015-2016 (1 year)",
-        skills: []
-      }
+        skills: [],
+      },
     ],
-    biography: "I am a multidisciplinary software engineer and photographer with a strong desire to learn and advance my skills in cutting-edge technologies. I specialize in web application development for mobile and desktop platforms, and have experience working with a wide range of technologies including React, Typescript, C# and Python. I have a proven track record of successfully delivering quality work. I am currently completing my Bachelor's degree in Software Technology at VIA University College in Denmark. As a native Hungarian from Romania, I also possess proficiency in English. I am also in the process of expanding my language skills by studying French and Danish. If you have a project that aligns with my skill set and interests, please do not hesitate to contact me at: ",
+    biography:
+      "I'm a dynamic software engineer, designer, and photographer driven by a passion for cutting-edge technology. At CERN, I excel as a Computing Engineer, and I bring my skills to Nullcarbon as a part-time Full Stack Developer. I specialize in web app development for mobile and desktop, leveraging React, TypeScript, C#, and Python. Armed with a Bachelor's degree in Software Technology from VIA University College in Denmark, I have a proven track record of delivering top-notch solutions. As a native Hungarian from Romania, I speak English, Hungarian & Romanian fluently and am expanding my linguistic horizons with French, Danish, and Brazilian Portuguese. Ready to bring innovation to your project? Reach out at:",
     email: "franciska-leonora.torok@cern.ch",
     skills: [
       "ReactJS",
@@ -75,9 +76,9 @@ const about = [
       "Azure DevOps (CI/CD)",
       "Jupyter",
       "Three.js",
-      "Vite.js"
-    ]
-  }
+      "Vite.js",
+    ],
+  },
 ];
 
 export function getDetails() {
