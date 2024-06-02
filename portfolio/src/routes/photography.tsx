@@ -6,7 +6,7 @@ import {
   LinearProgress,
   Typography,
 } from "@mui/material";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Photo, getPhotos } from "../data/photos";
 import { srcset } from "../components/srcset";
 
@@ -61,24 +61,43 @@ function Photography() {
   const [showButton, setShowButton] = useState(false);
   const imageRefs = useRef<(HTMLImageElement | null)[]>([]);
 
+  const handleImageLoad = useCallback(() => {
+    if (imageRefs.current.every((img) => img?.complete)) {
+      setLoading(false);
+    }
+  }, []);
+
   useEffect(() => {
-    setPhotos(getPhotos());
-    setLoading(false);
+    const fetchPhotos = async () => {
+      try {
+        const photos = await getPhotos();
+        setPhotos(photos);
+      } catch (error) {
+        console.error("Error fetching photos: ", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPhotos();
   }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+      entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("visible");
-        } else {
+        } else if (index >= 2) {
           entry.target.classList.remove("visible");
         }
       });
     });
 
-    imageRefs.current.forEach((img) => {
+    imageRefs.current.forEach((img, index) => {
       if (img) {
+        if (index < 2) {
+          img.classList.add("visible");
+        }
         observer.observe(img);
       }
     });
@@ -89,13 +108,19 @@ function Photography() {
   }, [photos]);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
+    const handleScroll = () => {
       if (window.scrollY > 200) {
         setShowButton(true);
       } else {
         setShowButton(false);
       }
-    });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const scrollToTop = () => {
@@ -133,6 +158,7 @@ function Photography() {
                     {...srcset(photo.img, 250, 200, rows, cols)}
                     alt={photo.title}
                     style={photoStyles}
+                    onLoad={handleImageLoad}
                     className="fade-in"
                   />
                 </ImageListItem>
