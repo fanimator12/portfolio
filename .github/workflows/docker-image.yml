@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     services:
       postgres:
@@ -20,6 +20,11 @@ jobs:
           POSTGRES_DB: postgres
         ports:
           - 5433:5432
+        options: > 
+          --health-cmd "pg_isready -U postgres" 
+          --health-interval 10s 
+          --health-timeout 5s 
+          --health-retries 5 
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
@@ -42,6 +47,12 @@ jobs:
         cd backend
         . venv/bin/activate
         flake8 .
+
+    - name: Wait for PostgreSQL to be ready
+      run: |
+        until pg_isready -h localhost -p 5432; do
+        sleep 1
+        done
 
     - name: Run tests
       env:
