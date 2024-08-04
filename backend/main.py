@@ -2,14 +2,13 @@ import os
 import re
 import boto3
 import time
-from fastapi import FastAPI, HTTPException, UploadFile, File
-from fastapi.responses import StreamingResponse
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from io import BytesIO
-from sqlalchemy import create_engine, Column, Integer, String, LargeBinary
+from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from dotenv import load_dotenv
+
 
 load_dotenv()
 
@@ -35,11 +34,13 @@ engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
+
 class Photo(Base):
     __tablename__ = "photos"
     id = Column(Integer, primary_key=True, index=True)
     filename = Column(String, index=True)
     url = Column(String, nullable=False)
+
 
 Base.metadata.create_all(bind=engine)
 
@@ -51,6 +52,7 @@ s3 = boto3.client(
     region_name=os.getenv("AWS_REGION"),
 )
 BUCKET_NAME = os.getenv("AWS_BUCKET_NAME")
+
 
 def sync_s3_with_db():
     session = SessionLocal()
@@ -79,6 +81,7 @@ def sync_s3_with_db():
         session.close()
         print("Session closed.")
 
+
 @app.get("/photos")
 async def get_photos():
     session = SessionLocal()
@@ -89,6 +92,7 @@ async def get_photos():
         return [{"filename": photo.filename, "url": photo.url} for photo in filtered_photos]
     finally:
         session.close()
+
 
 @app.get("/photos/{filename}")
 async def get_photo(filename: str):
@@ -107,6 +111,7 @@ async def get_photo(filename: str):
     )
 
     return {"filename": filename, "url": file_url}
+
 
 if __name__ == "__main__":
     time.sleep(5)  # Ensure the database is ready
