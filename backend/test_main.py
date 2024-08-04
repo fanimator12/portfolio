@@ -47,11 +47,11 @@ def test_get_photos_empty():
 def test_get_photos_with_data():
     db = SessionLocal()
     photo1 = Photo(
-        filename="1.JPG", 
+        filename="1.JPG",
         url="https://franciska-portfolio.s3.eu-west-1.amazonaws.com/1.JPG"
     )
     photo2 = Photo(
-        filename="2.jpg", 
+        filename="2.jpg",
         url="https://franciska-portfolio.s3.eu-west-1.amazonaws.com/2.jpg"
     )
     db.add_all([photo1, photo2])
@@ -66,7 +66,7 @@ def test_get_photos_with_data():
 def test_get_photo_found():
     db = SessionLocal()
     photo = Photo(
-        filename="1.JPG", 
+        filename="1.JPG",
         url="https://franciska-portfolio.s3.eu-west-1.amazonaws.com/1.JPG"
     )
     db.add(photo)
