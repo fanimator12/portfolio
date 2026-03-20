@@ -96,6 +96,13 @@ app.add_middleware(
 
 # --- Routes ---
 
+def extract_order(photo: Photo) -> int:
+    try:
+        return int(photo.filename.split(".")[0])
+    except ValueError:
+        return float("inf")
+ 
+ 
 @app.get("/photos")
 def get_photos(db: Session = Depends(get_db)):
     photos = db.execute(select(Photo)).scalars().all()
