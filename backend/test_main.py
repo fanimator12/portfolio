@@ -119,4 +119,3 @@ def test_get_photo_not_found():
     response = client.get("/photos/999.JPG")
     assert response.status_code == 404
     assert response.json() == {"detail": "Photo not found"}
-    
