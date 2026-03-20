@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# --- DB setup ---
+# --- DB Setup ---
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 engine = create_engine(DATABASE_URL)
@@ -33,7 +33,7 @@ def get_db():
         db.close()
 
 
-# --- S3 setup ---
+# --- S3 Setup ---
 
 s3 = boto3.client(
     "s3",
