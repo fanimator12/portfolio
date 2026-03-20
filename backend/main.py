@@ -100,7 +100,8 @@ app.add_middleware(
 def get_photos(db: Session = Depends(get_db)):
     photos = db.execute(select(Photo)).scalars().all()
     filtered = [p for p in photos if re.search(r"\d", p.filename)]
-    return [{"filename": p.filename, "url": p.url} for p in filtered]
+    sorted_photos = sorted(filtered, key=extract_order)
+    return [{"filename": p.filename, "url": p.url} for p in sorted_photos]
 
 
 @app.get("/photos/{filename}")
