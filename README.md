@@ -1,7 +1,7 @@
 # Franciska Torok's personal portfolio
 
 # Prerequisites 
-Install [virtualenv](https://virtualenv.pypa.io/en/latest/installation.html).
+Install [virtualenv](https://virtualenv.pypa.io/en/latest/how-to/install.html).
 
 # Run backend
 1. `cd backend`

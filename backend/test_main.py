@@ -68,11 +68,14 @@ def test_get_photos_empty():
     assert response.json() == []
 
 
+BASE_URL = "https://franciska-portfolio.s3.eu-west-1.amazonaws.com"
+
+
 def test_get_photos_with_data():
     db = SessionLocal()
     db.add_all([
-        Photo(filename="1.JPG", url="https://franciska-portfolio.s3.eu-west-1.amazonaws.com/1.JPG"),
-        Photo(filename="2.JPG", url="https://franciska-portfolio.s3.eu-west-1.amazonaws.com/2.JPG"),
+        Photo(filename="1.JPG", url=f"{BASE_URL}/1.JPG"),
+        Photo(filename="2.JPG", url=f"{BASE_URL}/2.JPG"),
     ])
     db.commit()
     db.close()
@@ -85,9 +88,9 @@ def test_get_photos_with_data():
 def test_get_photos_sorted():
     db = SessionLocal()
     db.add_all([
-        Photo(filename="3.JPG", url="https://franciska-portfolio.s3.eu-west-1.amazonaws.com/3.JPG"),
-        Photo(filename="1.JPG", url="https://franciska-portfolio.s3.eu-west-1.amazonaws.com/1.JPG"),
-        Photo(filename="2.JPG", url="https://franciska-portfolio.s3.eu-west-1.amazonaws.com/2.JPG"),
+        Photo(filename="3.JPG", url=f"{BASE_URL}/3.JPG"),
+        Photo(filename="1.JPG", url=f"{BASE_URL}/1.JPG"),
+        Photo(filename="2.JPG", url=f"{BASE_URL}/2.JPG"),
     ])
     db.commit()
     db.close()
@@ -100,7 +103,7 @@ def test_get_photos_sorted():
 
 def test_get_photo_found():
     db = SessionLocal()
-    db.add(Photo(filename="1.JPG", url="https://franciska-portfolio.s3.eu-west-1.amazonaws.com/1.JPG"))
+    db.add(Photo(filename="1.JPG", url=f"{BASE_URL}/1.JPG"))
     db.commit()
     db.close()
 

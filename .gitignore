@@ -4,3 +4,7 @@ dist
 venv
 .env
 fanimator_accessKeys.csv
+backend/aws/
+backend/awscliv2.zip
+.vercel
+.env*.local
