@@ -1,34 +1,18 @@
 import os
 import re
 import boto3
-import time
-from fastapi import FastAPI, HTTPException
+from contextlib import asynccontextmanager
+from fastapi import FastAPI, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
-from sqlalchemy import create_engine, Column, Integer, String
-from sqlalchemy.orm import declarative_base, sessionmaker
+from sqlalchemy import create_engine, Column, Integer, String, select
+from sqlalchemy.orm import declarative_base, sessionmaker, Session
 from dotenv import load_dotenv
-
 
 load_dotenv()
 
-app = FastAPI()
-
-# CORS settings
-origins = [
-    "http://localhost:8080",
-]
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+# --- DB setup ---
 
 DATABASE_URL = os.getenv("DATABASE_URL")
-print(f"Database URL: {DATABASE_URL}")
-
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
@@ -41,9 +25,16 @@ class Photo(Base):
     url = Column(String, nullable=False)
 
 
-Base.metadata.create_all(bind=engine)
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
 
-# AWS S3 setup
+
+# --- S3 setup ---
+
 s3 = boto3.client(
     "s3",
     aws_access_key_id=os.getenv("AWS_ACCESS_KEY_ID"),
@@ -53,71 +44,77 @@ s3 = boto3.client(
 BUCKET_NAME = os.getenv("AWS_BUCKET_NAME")
 
 
+# --- Sync ---
+
 def sync_s3_with_db():
     session = SessionLocal()
     try:
-        print("Starting S3 to DB sync process...")
+        print("Starting S3 to DB sync...")
         response = s3.list_objects_v2(Bucket=BUCKET_NAME)
-        if "Contents" in response:
-            for obj in response["Contents"]:
-                filename = obj["Key"]
-                file_url = f"https://{BUCKET_NAME}.s3.amazonaws.com/{filename}"
+        if "Contents" not in response:
+            print("No objects found in bucket.")
+            return
 
-                print(f"Checking if {filename} exists in the database...")
-                existing_photo = (
-                    session.query(Photo).filter(Photo.filename == filename).first()
-                )
-                if not existing_photo:
-                    print(f"Inserting {filename} into the database...")
-                    new_photo = Photo(filename=filename, url=file_url)
-                    session.add(new_photo)
-                    print(f"Added {filename} to the database.")
+        for obj in response["Contents"]:
+            filename = obj["Key"]
+            file_url = f"https://{BUCKET_NAME}.s3.amazonaws.com/{filename}"
+            existing = session.execute(
+                select(Photo).where(Photo.filename == filename)
+            ).scalar_one_or_none()
+            if not existing:
+                print(f"Inserting {filename}...")
+                session.add(Photo(filename=filename, url=file_url))
 
         session.commit()
-        print("Database sync completed and committed.")
+        print("Sync complete.")
     except Exception as e:
         session.rollback()
-        print(f"Error syncing S3 with DB: {str(e)}")
+        print(f"Sync error: {e}")
     finally:
         session.close()
-        print("Session closed.")
 
+
+# --- App ---
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    Base.metadata.create_all(bind=engine)
+    sync_s3_with_db()
+    yield
+
+
+app = FastAPI(lifespan=lifespan)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:8080"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
+# --- Routes ---
 
 @app.get("/photos")
-async def get_photos():
-    session = SessionLocal()
-    try:
-        photos = session.query(Photo).all()
-        # Filter photos to only include filenames that contain numbers
-        filtered_photos = [
-            photo for photo in photos if re.search(r"\d", photo.filename)
-        ]
-        return [
-            {"filename": photo.filename, "url": photo.url} for photo in filtered_photos
-        ]
-    finally:
-        session.close()
+def get_photos(db: Session = Depends(get_db)):
+    photos = db.execute(select(Photo)).scalars().all()
+    filtered = [p for p in photos if re.search(r"\d", p.filename)]
+    return [{"filename": p.filename, "url": p.url} for p in filtered]
 
 
 @app.get("/photos/{filename}")
-async def get_photo(filename: str):
-    session = SessionLocal()
-    photo = session.query(Photo).filter(Photo.filename == filename).first()
-    session.close()
+def get_photo(filename: str, db: Session = Depends(get_db)):
+    photo = db.execute(
+        select(Photo).where(Photo.filename == filename)
+    ).scalar_one_or_none()
 
     if not photo:
-        raise HTTPException(status_code=404, detail="Photo not found in the database")
+        raise HTTPException(status_code=404, detail="Photo not found")
 
-    # Generate the URL to the photo in S3
-    file_url = s3.generate_presigned_url(
+    url = s3.generate_presigned_url(
         "get_object",
         Params={"Bucket": BUCKET_NAME, "Key": filename},
         ExpiresIn=3600,
     )
-
-    return {"filename": filename, "url": file_url}
-
-
-if __name__ == "__main__":
-    time.sleep(5)
-    sync_s3_with_db()
+    return {"filename": filename, "url": url}
