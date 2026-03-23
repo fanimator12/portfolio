@@ -1,37 +1,11 @@
 import os
 import re
 import boto3
-from contextlib import asynccontextmanager
-from fastapi import FastAPI, HTTPException, Depends
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from sqlalchemy import create_engine, Column, Integer, String, select
-from sqlalchemy.orm import declarative_base, sessionmaker, Session
 from dotenv import load_dotenv
 
 load_dotenv()
-
-# --- DB Setup ---
-
-DATABASE_URL = os.getenv("DATABASE_URL")
-engine = create_engine(DATABASE_URL)
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-Base = declarative_base()
-
-
-class Photo(Base):
-    __tablename__ = "photos"
-    id = Column(Integer, primary_key=True, index=True)
-    filename = Column(String, index=True)
-    url = Column(String, nullable=False)
-
-
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
-
 
 # --- S3 Setup ---
 
@@ -43,81 +17,58 @@ s3 = boto3.client(
 )
 BUCKET_NAME = os.getenv("AWS_BUCKET_NAME")
 
-
-# --- Sync ---
-
-def sync_s3_with_db():
-    session = SessionLocal()
-    try:
-        print("Starting S3 to DB sync...")
-        response = s3.list_objects_v2(Bucket=BUCKET_NAME)
-        if "Contents" not in response:
-            print("No objects found in bucket.")
-            return
-
-        for obj in response["Contents"]:
-            filename = obj["Key"]
-            file_url = f"https://{BUCKET_NAME}.s3.amazonaws.com/{filename}"
-            existing = session.execute(
-                select(Photo).where(Photo.filename == filename)
-            ).scalar_one_or_none()
-            if not existing:
-                print(f"Inserting {filename}...")
-                session.add(Photo(filename=filename, url=file_url))
-
-        session.commit()
-        print("Sync complete.")
-    except Exception as e:
-        session.rollback()
-        print(f"Sync error: {e}")
-    finally:
-        session.close()
-
-
 # --- App ---
 
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    Base.metadata.create_all(bind=engine)
-    sync_s3_with_db()
-    yield
-
-
-app = FastAPI(lifespan=lifespan)
+app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:8080"],
+    allow_origins=[
+        "http://localhost:8080",
+        "https://portfolio-v6fc.onrender.com",
+        "https://fanimator.me",
+        "https://fanimator.vercel.app",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
+# --- Helpers ---
 
-# --- Routes ---
 
-def extract_order(photo: Photo) -> int:
+def extract_order(filename: str) -> int:
     try:
-        return int(photo.filename.split(".")[0])
+        return int(filename.split(".")[0])
     except ValueError:
         return float("inf")
 
 
+# --- Routes ---
+
+
 @app.get("/photos")
-def get_photos(db: Session = Depends(get_db)):
-    photos = db.execute(select(Photo)).scalars().all()
-    filtered = [p for p in photos if re.search(r"\d", p.filename)]
-    sorted_photos = sorted(filtered, key=extract_order)
-    return [{"filename": p.filename, "url": p.url} for p in sorted_photos]
+def get_photos():
+    response = s3.list_objects_v2(Bucket=BUCKET_NAME)
+    if "Contents" not in response:
+        return []
+    filenames = [obj["Key"] for obj in response["Contents"]]
+    filtered = [f for f in filenames if re.search(r"\d", f)]
+    sorted_filenames = sorted(filtered, key=extract_order)
+    return [
+        {
+            "filename": f,
+            "url": f"https://{BUCKET_NAME}.s3.amazonaws.com/{f}",
+        }
+        for f in sorted_filenames
+    ]
 
 
 @app.get("/photos/{filename}")
-def get_photo(filename: str, db: Session = Depends(get_db)):
-    photo = db.execute(
-        select(Photo).where(Photo.filename == filename)
-    ).scalar_one_or_none()
-
-    if not photo:
+def get_photo(filename: str):
+    try:
+        s3.head_object(Bucket=BUCKET_NAME, Key=filename)
+    except s3.exceptions.ClientError:
         raise HTTPException(status_code=404, detail="Photo not found")
 
     url = s3.generate_presigned_url(
