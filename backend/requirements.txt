@@ -9,6 +9,7 @@ email_validator==2.2.0
 exceptiongroup==1.2.2
 fastapi==0.112.0
 fastapi-cli==0.0.5
+flake8==7.1.0
 greenlet==3.0.3
 h11==0.14.0
 httpcore==1.0.5
@@ -34,6 +35,7 @@ pydantic-settings==2.4.0
 pydantic_core==2.20.1
 pyflakes==3.2.0
 Pygments==2.18.0
+pytest==8.3.2
 python-dateutil==2.9.0.post0
 python-dotenv==1.0.1
 python-multipart==0.0.9
