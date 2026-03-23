@@ -38,7 +38,7 @@ def test_get_photos_sorted():
 
 
 def test_get_photos_correct_url():
-    with patch("main.s3") as mock_s3:
+    with patch("main.s3") as mock_s3, patch("main.AWS_REGION", "eu-west-1"):
         mock_s3.list_objects_v2.return_value = {
             "Contents": [{"Key": "1.JPG"}]
         }
