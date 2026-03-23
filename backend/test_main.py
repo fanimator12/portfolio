@@ -7,6 +7,7 @@ client = TestClient(app)
 
 BASE_URL = "https://franciska-portfolio.s3.eu-west-1.amazonaws.com"
 
+
 def test_get_photos_empty():
     with patch("main.s3") as mock_s3:
         mock_s3.list_objects_v2.return_value = {}

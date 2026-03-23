@@ -53,13 +53,14 @@ def get_photos():
     response = s3.list_objects_v2(Bucket=BUCKET_NAME)
     if "Contents" not in response:
         return []
+    region = os.getenv("AWS_REGION")
     filenames = [obj["Key"] for obj in response["Contents"]]
     filtered = [f for f in filenames if re.search(r"\d", f)]
     sorted_filenames = sorted(filtered, key=extract_order)
     return [
         {
             "filename": f,
-            "url": f"https://{BUCKET_NAME}.s3.{os.getenv('AWS_REGION')}amazonaws.com/{f}",
+            "url": f"https://{BUCKET_NAME}.s3.{region}.amazonaws.com/{f}",
         }
         for f in sorted_filenames
     ]
