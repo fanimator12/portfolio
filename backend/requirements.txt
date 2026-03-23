@@ -9,7 +9,6 @@ email_validator==2.2.0
 exceptiongroup==1.2.2
 fastapi==0.112.0
 fastapi-cli==0.0.5
-flake8==7.1.0
 greenlet==3.0.3
 h11==0.14.0
 httpcore==1.0.5
@@ -27,7 +26,7 @@ mdurl==0.1.2
 orjson==3.10.6
 packaging==24.1
 pluggy==1.5.0
-psycopg2-binary==2.9.5
+psycopg2-binary==2.9.9
 pycodestyle==2.12.0
 pydantic==2.8.2
 pydantic-extra-types==2.9.0
@@ -35,7 +34,6 @@ pydantic-settings==2.4.0
 pydantic_core==2.20.1
 pyflakes==3.2.0
 Pygments==2.18.0
-pytest==8.3.2
 python-dateutil==2.9.0.post0
 python-dotenv==1.0.1
 python-multipart==0.0.9
