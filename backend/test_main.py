@@ -1,11 +1,11 @@
 from fastapi.testclient import TestClient
+from botocore.exceptions import ClientError
 from unittest.mock import patch
 from main import app
 
 client = TestClient(app)
 
 BASE_URL = "https://franciska-portfolio.s3.eu-west-1.amazonaws.com"
-
 
 def test_get_photos_empty():
     with patch("main.s3") as mock_s3:
@@ -57,7 +57,7 @@ def test_get_photo_found():
 
 def test_get_photo_not_found():
     with patch("main.s3") as mock_s3:
-        mock_s3.head_object.side_effect = mock_s3.exceptions.ClientError(
+        mock_s3.head_object.side_effect = ClientError(
             {"Error": {"Code": "404", "Message": "Not Found"}}, "HeadObject"
         )
         response = client.get("/photos/999.JPG")

@@ -4,6 +4,7 @@ import boto3
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
+from botocore.exceptions import ClientError
 
 load_dotenv()
 
@@ -58,7 +59,7 @@ def get_photos():
     return [
         {
             "filename": f,
-            "url": f"https://{BUCKET_NAME}.s3.amazonaws.com/{f}",
+            "url": f"https://{BUCKET_NAME}.s3.{os.getenv('AWS_REGION')}amazonaws.com/{f}",
         }
         for f in sorted_filenames
     ]
@@ -68,7 +69,7 @@ def get_photos():
 def get_photo(filename: str):
     try:
         s3.head_object(Bucket=BUCKET_NAME, Key=filename)
-    except s3.exceptions.ClientError:
+    except ClientError:
         raise HTTPException(status_code=404, detail="Photo not found")
 
     url = s3.generate_presigned_url(
